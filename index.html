@@ -167,7 +167,6 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding: 20px;
     }
 
     .gold {
@@ -365,16 +364,427 @@
       font-family: arial, sans-serif;
       color: #fff;
     }
+
+
+    .clock {
+      width: 380px;
+      height: 380px;
+      background-color: #fff;
+      -webkit-box-shadow: 0 0 5px 0 #888;
+      box-shadow: 0 0 5px 0 #888;
+      border-radius: 100%;
+      position: relative;
+      perspective: 100px;
+      display: inline-block;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .clock .apm {
+      position: absolute;
+      top: 50%;
+      left: 60%;
+      transform: translateY(-50%);
+      font-size: 10px;
+      opacity: 0.3;
+      color: #000;
+    }
+
+    .needle {
+      width: 50%;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -ms-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+      -webkit-transform: translateY(-50%) rotateZ(-90deg);
+      -ms-transform: translateY(-50%) rotateZ(-90deg);
+      transform: translateY(-50%) rotateZ(-90deg);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
+
+    .needle .hours,
+    .needle .minutes,
+    .needle .seconds {
+      display: block;
+      position: relative;
+    }
+
+    .needle .seconds {
+      -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotateZ(0deg);
+      transform: rotateZ(0deg);
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -ms-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+
+    }
+
+    .needle .minutes {
+      -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotateZ(0deg);
+      transform: rotateZ(0deg);
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -ms-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+    }
+
+    .needle .hours {
+      -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotateZ(0deg);
+      transform: rotateZ(0deg);
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -ms-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+    }
+
+    .needle .hours:empty:before,
+    .needle .minutes:empty:before,
+    .needle .seconds:empty:before {
+      content: '';
+      display: block;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .needle .seconds:empty:after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      display: block;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: -5px;
+      transform: translateY(-50%);
+    }
+
+    .needle .hours:empty:before {
+      width: 50%;
+      background-color: Tomato;
+
+    }
+
+    .needle .hours:empty:after {
+      background-color: Tomato;
+    }
+
+    .needle .minutes:empty:before {
+      width: 70%;
+      background-color: Tomato;
+    }
+
+    .needle .minutes:empty:after {
+      background-color: Tomato;
+    }
+
+    .needle .seconds:empty:before {
+      width: 90%;
+      background-color: Tomato;
+    }
+
+    .needle .seconds:empty:after {
+      background-color: Tomato;
+
+    }
+
+    .time-number {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      height: 50%;
+    }
+
+    .time-number li {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      display: block;
+      -webkit-transform-origin: bottom center;
+      -moz-transform-origin: bottom center;
+      -ms-transform-origin: bottom center;
+      -o-transform-origin: bottom center;
+      transform-origin: bottom center;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+
+    .time-number li>span {
+      display: block;
+      margin-top: 5px;
+    }
+
+    /* 1 */
+    .time-number li:nth-child(1) {
+      -webkit-transform: translateX(-50%) rotateZ(30deg);
+      -ms-transform: translateX(-50%) rotateZ(30deg);
+      transform: translateX(-50%) rotateZ(30deg);
+    }
+
+    .time-number li:nth-child(1)>span {
+      -webkit-transform: rotateZ(-30deg);
+      -ms-transform: rotateZ(-30deg);
+      transform: rotateZ(-30deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(2) {
+      -webkit-transform: translateX(-50%) rotateZ(60deg);
+      -ms-transform: translateX(-50%) rotateZ(60deg);
+      transform: translateX(-50%) rotateZ(60deg);
+    }
+
+    .time-number li:nth-child(2)>span {
+      -webkit-transform: rotateZ(-60deg);
+      -ms-transform: rotateZ(-60deg);
+      transform: rotateZ(-60deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(3) {
+      -webkit-transform: translateX(-50%) rotateZ(90deg);
+      -ms-transform: translateX(-50%) rotateZ(90deg);
+      transform: translateX(-50%) rotateZ(90deg);
+    }
+
+    .time-number li:nth-child(3)>span {
+      -webkit-transform: rotateZ(-90deg);
+      -ms-transform: rotateZ(-90deg);
+      transform: rotateZ(-90deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(4) {
+      -webkit-transform: translateX(-50%) rotateZ(120deg);
+      -ms-transform: translateX(-50%) rotateZ(120deg);
+      transform: translateX(-50%) rotateZ(120deg);
+    }
+
+    .time-number li:nth-child(4)>span {
+      -webkit-transform: rotateZ(-120deg);
+      -ms-transform: rotateZ(-120deg);
+      transform: rotateZ(-120deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(5) {
+      -webkit-transform: translateX(-50%) rotateZ(150deg);
+      -ms-transform: translateX(-50%) rotateZ(150deg);
+      transform: translateX(-50%) rotateZ(150deg);
+    }
+
+    .time-number li:nth-child(5)>span {
+      -webkit-transform: rotateZ(-150deg);
+      -ms-transform: rotateZ(-150deg);
+      transform: rotateZ(-150deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(6) {
+      -webkit-transform: translateX(-50%) rotateZ(180deg);
+      -ms-transform: translateX(-50%) rotateZ(180deg);
+      transform: translateX(-50%) rotateZ(180deg);
+    }
+
+    .time-number li:nth-child(6)>span {
+      -webkit-transform: rotateZ(-180deg);
+      -ms-transform: rotateZ(-180deg);
+      transform: rotateZ(-180deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(7) {
+      -webkit-transform: translateX(-50%) rotateZ(210deg);
+      -ms-transform: translateX(-50%) rotateZ(210deg);
+      transform: translateX(-50%) rotateZ(210deg);
+    }
+
+    .time-number li:nth-child(7)>span {
+      -webkit-transform: rotateZ(-210deg);
+      -ms-transform: rotateZ(-210deg);
+      transform: rotateZ(-210deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(8) {
+      -webkit-transform: translateX(-50%) rotateZ(240deg);
+      -ms-transform: translateX(-50%) rotateZ(240deg);
+      transform: translateX(-50%) rotateZ(240deg);
+    }
+
+    .time-number li:nth-child(8)>span {
+      -webkit-transform: rotateZ(-240deg);
+      -ms-transform: rotateZ(-240deg);
+      transform: rotateZ(-240deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(9) {
+      -webkit-transform: translateX(-50%) rotateZ(270deg);
+      -ms-transform: translateX(-50%) rotateZ(270deg);
+      transform: translateX(-50%) rotateZ(270deg);
+    }
+
+    .time-number li:nth-child(9)>span {
+      -webkit-transform: rotateZ(-270deg);
+      -ms-transform: rotateZ(-270deg);
+      transform: rotateZ(-270deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(10) {
+      -webkit-transform: translateX(-50%) rotateZ(300deg);
+      -ms-transform: translateX(-50%) rotateZ(300deg);
+      transform: translateX(-50%) rotateZ(300deg);
+    }
+
+    .time-number li:nth-child(10)>span {
+      -webkit-transform: rotateZ(-300deg);
+      -ms-transform: rotateZ(-300deg);
+      transform: rotateZ(-300deg);
+    }
+
+    /* 2 */
+    .time-number li:nth-child(11) {
+      -webkit-transform: translateX(-50%) rotateZ(330deg);
+      -ms-transform: translateX(-50%) rotateZ(330deg);
+      transform: translateX(-50%) rotateZ(330deg);
+    }
+
+    .time-number li:nth-child(11)>span {
+      -webkit-transform: rotateZ(-330deg);
+      -ms-transform: rotateZ(-330deg);
+      transform: rotateZ(-330deg);
+    }
+
+    .clock.ui-dodgerblue .seconds:before,
+    .clock.ui-dodgerblue .seconds:after,
+    .clock.ui-dodgerblue .minutes:before,
+    .clock.ui-dodgerblue .hours:before,
+    .clock.ui-tomato .seconds:before,
+    .clock.ui-tomato .seconds:after,
+    .clock.ui-tomato .minutes:before,
+    .clock.ui-tomato .hours:before,
+    .clock.ui-black .seconds:before,
+    .clock.ui-black .seconds:after,
+    .clock.ui-black .minutes:before,
+    .clock.ui-black .hours:before,
+    .clock.ui-awesome .seconds:before,
+    .clock.ui-awesome .seconds:after,
+    .clock.ui-awesome .minutes:before,
+    .clock.ui-awesome .hours:before {
+      background-color: #FFF;
+    }
+
+    .clock.ui-banana-yellow .seconds:before,
+    .clock.ui-banana-yellow .seconds:after,
+    .clock.ui-banana-yellow .minutes:before,
+    .clock.ui-banana-yellow .hours:before {
+      background-color: #000;
+    }
+
+    .clock.ui-dodgerblue .apm,
+    .clock.ui-tomato .apm,
+    .clock.ui-black .apm,
+    .clock.ui-awesome .apm {
+      color: #FFF;
+      opacity: 1;
+    }
+
+    .clock.ui-banana-yellow .apm {
+      color: #000;
+      opacity: 1;
+    }
+
+    .clock.ui-dodgerblue {
+      background-color: dodgerblue;
+      color: #FFF;
+    }
+
+    .clock.ui-tomato {
+      background-color: tomato;
+      color: #FFF;
+    }
+
+    .clock.ui-black {
+      background-color: #141414;
+      color: #FFF;
+    }
+
+    .clock.ui-awesome {
+      background-color: #FF2052;
+      color: #FFF;
+    }
+
+    .clock.ui-banana-yellow {
+      background-color: #FFE135;
+      color: #000;
+    }
+
+    .clock.ui-large {
+      width: 400px;
+      height: 400px;
+      font-size: 40px;
+    }
+
+    .clock.ui-medium {
+      width: 180px;
+      height: 180px;
+    }
+
+    .clock.ui-small {
+      width: 100px;
+      height: 100px;
+    }
+
+
+
+    .demo {
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .demo h4 {
+      margin-top: -10px;
+      color: antiquewhite;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+      -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+      padding: 10px;
+    }
+
+
   </style>
 </head>
 
 <body>
   <div class="row">
     <div class="col-lg-12 d-flex">
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <img class="logo" src="./Pulparambil white logo.png" alt="" style="width: 600px;margin-top:20px;margin-left: 5%;">
       </div>
-      <div class="col-lg-4 date-time">
+      <div class="col-lg-3 date-time">
         <div id="clockdate">
           <div class="clockdate-wrapper">
             <div id="clock"></div>
@@ -382,11 +792,97 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-6">
+        <div style="display: flex; margin-top: 20px;">
+          <div class="demo ml-5">
+            <div class="clock ui-small" data-timezone="Asia/Kolkata">
+              <div class="needle">
+                <span class="minutes"></span>
+                <span class="hours"></span>
+                <span class="seconds"></span>
+              </div>
+  
+              <ul class="time-number">
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+                <li><span>10</span></li>
+                <li><span>11</span></li>
+                <li><span>12</span></li>
+              </ul>
+  
+              <div class="apm"></div>
+            </div>
+            <h4>India</h4>
+          </div>
+  
+          <div class="demo ml-5">
+            <div class="clock ui-small" data-timezone="America/New_York">
+              <div class="needle">
+                <span class="minutes"></span>
+                <span class="hours"></span>
+                <span class="seconds"></span>
+              </div>
+  
+              <ul class="time-number">
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+                <li><span>10</span></li>
+                <li><span>11</span></li>
+                <li><span>12</span></li>
+              </ul>
+  
+              <div class="apm"></div>
+            </div>
+            <h4>New York</h4>
+          </div>
+
+          <div class="demo ml-5">
+            <div class="clock ui-small" data-timezone="Europe/London">
+              <div class="needle">
+                <span class="minutes"></span>
+                <span class="hours"></span>
+                <span class="seconds"></span>
+              </div>
+  
+              <ul class="time-number">
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+                <li><span>10</span></li>
+                <li><span>11</span></li>
+                <li><span>12</span></li>
+              </ul>
+  
+              <div class="apm"></div>
+            </div>
+            <h4>London</h4>
+          </div>
+  
+        </div>
       </div>
     </div>
-
-    <div class="col-lg-7  mr-5">
+    <div class=" col-lg-7" style=" box-shadow:2px 2px 10px #424242">
+    <div class="col-lg-12  mr-3 mt-3 mb-3">
       <div class="card-table">
         <table>
           <thead style="margin-bottom: 0px;">
@@ -414,24 +910,26 @@
         </table>
       </div>
     </div>
+</div>
 
 
-
-    <div class=" col-lg-4" style=" border: solid #3f0112;padding: 5px;">
-    <div class=" col-lg-12 gold-silver gold d-block" style="margin-top:-20px ;">
-      <div class="label" style="display: flex;justify-content: center;align-items: center; background-color:#f9a19f ; color: #9d002b; margin:15px 0;">
+    <div class=" col-lg-4" style=" box-shadow:2px 2px 10px #424242">
+    <div class=" col-lg-12 gold-silver gold d-block"  style="margin-bottom: 20px;">
+    
+      <div class="label" style="display: flex;justify-content: center;align-items: center; background-color:#f9a19f ; color: #9d002b; margin:18px 0;">
       <p>Spot Rate</p>
       <div style="background-color: white;height: 38px;width: 38px;border: none;border-radius: 50%;  display: flex;justify-content: center;align-items: center;margin-left: 20px;">
       <i class="fa-solid fa-dollar-sign" style="color: #9d002b; "></i>
     </div>
     </div>
+    <div class="d-flex mb-2">
       <!-- GOLD -->
-      <div class="label"
-        style="display: flex;justify-content: center;align-items: center;background-color: #9d002b;color: white;">
+      <div class="label col-lg-3 dflex"
+        style="background-color: #9d002b;color: white;  min-height: 5em;">
         <p>Gold</p>
         <h5>oz</h5>
       </div>
-      <div class="d-flex mt-2" style="justify-content:space-around; background-color: rgba(255, 255, 255, 0.9);">
+      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);">
         <div class="buy">
           <div class="buy-label">
 
@@ -454,22 +952,24 @@
             id="highLabelGold">0</label>
         </div>
       </div>
+    </div>
 
       <!-- silver -->
-      <div class=" label mt-4"
-        style="display: flex;justify-content: center;align-items: center;background-color: #9d002b;color: white;">
+      <div class="d-flex ">
+      <div class=" label d-flex col-lg-3"
+        style="background-color: #9d002b;color: white; min-height: 4em;">
         <p>Silver</p>
         <h5>oz</h5>
       </div>
-      <div class="d-flex mt-2" style="justify-content:space-around; background-color: rgba(255, 255, 255, 0.9);">
-        <div class="buy">
+      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);">
+        <div class="buy mt-2">
           <div class="buy-label">
 
             <p style="font-size: 28px;">BID</p>
            
           </div>
           <div class="form-control input-box" id="silverInputLow" style="font-size: 34px;"></div>
-          <label class="badge badge-success label-low mt-1" style="width: 100px; font-size:24px;"
+          <label class="badge badge-success label-low mt-2" style="width: 100px; font-size:24px;"
             id="lowLabelSilver">0</label>
         </div>
         <div class="sell">
@@ -484,6 +984,7 @@
         </div>
       </div>
     </div>
+    </div>
 
   </div>
     
@@ -494,7 +995,7 @@
 
 
 
-  <div class="row " style="margin-top: -50px;">
+  <div class="row " style="margin-top: -20px;">
     <div class="col-lg-12 news-card" style="margin-left: 64px; max-width: 92.5%;">
       <div class="news-label">
         <h3>PULPARAMBIL</h3>
@@ -544,7 +1045,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  <script src="./worldclock.js"></script>
   <script>
     function startTime() {
       function updateTime() { 
