@@ -2,18 +2,44 @@
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js";
 import { app } from '../../../config/db.js';
 
+// const { JSDOM } = require('jsdom');
+const script = document.createElement('script');
+script.src = 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js';
+document.head.appendChild(script);
+
+// const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
+// global.window = dom.window;
+// global.document = dom.window.document;
+
+
 const firestore = getFirestore(app)
 
 setInterval(fetchData, 500);
 
-// setInterval(() => {
-//     blinker()
-// }, 500)
+setInterval(() => {
+    fetchData2()
+}, 1200)
 
 showTable();
 
 
 let askSpread, bidSpread, goldValue, silverBidSpread, silverAskSpread, goldBuy, goldSell, silverBuy, silverSell, silverValue;
+
+const socket = io('https://meta-api-server.onrender.com');
+
+function fetchData2() {
+    socket.on('goldValue', (goldValues) => {
+        // console.log('Received gold value:', goldValue);
+        const value = goldValues.bid;
+        goldBuy = (value + bidSpread).toFixed(2);
+        goldSell = (value + askSpread + parseFloat(0.5)).toFixed(2);
+
+        var GoldUSDResult = (value / 31.1035).toFixed(4);
+        goldValue = (GoldUSDResult * 3.67).toFixed(4);
+        // You can do something with the received gold value here, like updating UI
+    });
+}
+
 
 // Gold API KEY
 const API_KEY = 'goldapi-fbqpmirloto20zi-io'
@@ -48,8 +74,8 @@ async function fetchData() {
         document.getElementById('goldRate').textContent = '$' + goldValueUSD.toFixed(2);
         document.getElementById('silverRate').textContent = '$' + silverValueUSD.toFixed(3);
 
-        var GoldUSDResult = (goldValueUSD / 31.1035).toFixed(4);
-        goldValue = (GoldUSDResult * 3.67).toFixed(4);
+        // var GoldUSDResult = (goldValueUSD / 31.1035).toFixed(4);
+        // goldValue = (GoldUSDResult * 3.67).toFixed(4);
 
         var silverUSDResult = (silverValueUSD / 31.1035).toFixed(4)
         silverValue = parseFloat(silverUSDResult * 3.67).toFixed(4)
@@ -60,8 +86,8 @@ async function fetchData() {
         var silverHighValue = parseFloat(resultSilver.high_price);
 
 
-        goldBuy = (goldValueUSD + bidSpread).toFixed(2);
-        goldSell = (goldValueUSD + askSpread + parseFloat(0.5)).toFixed(2);
+        // goldBuy = (goldValueUSD + bidSpread).toFixed(2);
+        // goldSell = (goldValueUSD + askSpread + parseFloat(0.5)).toFixed(2);
         silverBuy = (silverValueUSD + silverBidSpread).toFixed(3);
         silverSell = (silverValueUSD + silverAskSpread + parseFloat(0.05)).toFixed(3);
 
@@ -225,7 +251,7 @@ async function fetchData() {
 
 async function readSpreadValues() {
     try {
-        const uid = 'LnpQA4ZFsEPRbLul1zDTFj5tWvn1';
+        const uid = 'G46UZJNWfJhGAWytlVuUzFXzKf13';
         if (!uid) {
             console.error('User not authenticated');
             throw new Error('User not authenticated');
@@ -270,7 +296,7 @@ async function displaySpreadValues() {
 // Function to read data from the Firestore collection
 async function readData() {
     // Get the UID of the authenticated user
-    const uid = 'LnpQA4ZFsEPRbLul1zDTFj5tWvn1';
+    const uid = 'G46UZJNWfJhGAWytlVuUzFXzKf13';
 
     if (!uid) {
         console.error('User not authenticated');
