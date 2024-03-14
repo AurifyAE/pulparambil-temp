@@ -22,7 +22,7 @@
       padding: 40px;
       font-family: "arial", heletica, sans-serif;
       font-size: 24px;
-      background: white url('./miop4.jpg');
+      background: white url('./67158\ [Converted].png');
       background-repeat: no-repeat;
       background-size: cover;
       -webkit-animation: 20s linear 0s normal none infinite animate;
@@ -87,7 +87,7 @@
       width: 100%;
       margin-left: 0px;
       font-size: 1.8vw;
-      color: #000000;
+      color: #fff;
     }
 
     .card-table tbody {
@@ -96,36 +96,38 @@
     }
     .card-table tbody tr{
       margin-top: 10px;
-      opacity: 0.65;
     }
 
     .card-table tr {
-      background-color: #9c062e;
+      background-color: transparent;
      
       /* Light gray background for odd rows */
       
     }
 
     .card-table tbody tr:nth-child(even) {
-      background-color: #be0a3a;
-  
-      /* Dark gray background for even rows */
-    }
+    background-color: transparent; /* Alternate row background color */
+  }
+
 
 
 
     .card-table th {
-      background-color: #9d002b;
-      color: white;
-    }
+    background-color:transparent;
+    color: #dbbd75;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+  }
 
     /* .card-table tbody td {} */
 
-    .card-table th,
-    .card-table td {
-      padding: 12px;
-      text-align: center;
-    }
+    .card-table td,
+  .card-table th {
+    padding: 12px;
+    text-align: center;
+
+  }
 
     .card-table td {
       font-weight: bold;
@@ -135,11 +137,9 @@
       font-size: 1.8vw;
     }
 
-    /* Hover effect for better user experience */
     .card-table tbody tr:hover {
-      background-color: #9d002b
-      /* Lighter gray on hover */
-    }
+    background-color: #ddd; /* Hover effect */
+  }
 
     .date-time {
       display: flex;
@@ -248,8 +248,8 @@
       padding: 5px;
       flex-direction: column;
       align-items: center;
-      background-color: #9d002b;
-      color: white;
+      background-color: #dbbd75;
+      color: #260b0b;
     }
 
     .news-card .news-label h3 {
@@ -385,7 +385,7 @@
 	height: 20vh;
 	display: flex;
 	align-items: center;
-	justify-content:flex-start;
+	justify-content:space-evenly;
 }
 
 .containerwt h2{
@@ -393,10 +393,15 @@
 	padding: 32px;
 	font-size: 42px;
   font-weight: 800;
+ 
+}
+.containerwt span{
+  padding: 10px;
+  background-color: #dbbd75;
+  color: #260b0b;
 }
 
 .containerwt h2 small{ font-size: 28px; }
-
 
   </style>
 </head>
@@ -415,27 +420,27 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6 mb-5" style="box-shadow:2px 2px 10px #424242;margin-left: 60px; border-radius: 40px;">
         <div class="containerwt">
           
           <h2 data-locale="New York" data-offset="-4">
             <p></p>
-            New York
+            <span>&nbsp;New York&nbsp;</span>
           </h2>
           
           <h2 data-locale="UK" data-offset="+0">
             <p></p>
-            UK <small>(London)</small>
+            <span>&nbsp;UK <small>(London)</small>&nbsp;</span>
           </h2>
           
           <h2 data-locale="india" data-offset="+5.5">
             <p></p>
-            INDIA
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;India&nbsp;&nbsp;&nbsp;&nbsp;</span>
           </h2>
         </div>
       </div>
     </div>
-    <div class=" col-lg-7" style=" box-shadow:2px 2px 10px #424242;margin-left: 60px;">
+    <div class=" col-lg-7" style=" box-shadow:2px 2px 10px #424242;margin-left: 60px; border-radius: 40px;">
     <div class="col-lg-12  mr-3 mt-3 mb-3">
       <div class="card-table">
         <table>
@@ -467,43 +472,46 @@
 </div>
 
 
-    <div class=" col-lg-4" style=" box-shadow:2px 2px 10px #424242;">
+    <div class=" col-lg-4">
     <div class=" col-lg-12 gold-silver gold d-block"  style="margin-bottom: 20px;">
     
-      <div class="label" style="display: flex;justify-content: center;align-items: center; background-color:#f9a19f ; color: #9d002b; margin:18px 0;">
-      <p>Spot Rate</p>
-      <div style="background-color: white;height: 38px;width: 38px;border: none;border-radius: 50%;  display: flex;justify-content: center;align-items: center;margin-left: 20px;">
-      <i class="fa-solid fa-dollar-sign" style="color: #9d002b; "></i>
-    </div>
+      <div class="label" style="display: flex;justify-content: center;align-items: center; background-color:transparent;  color: #fff; margin:18px 0;">
+      <p>Spot Rate (&nbsp;$&nbsp;)</p>
     </div>
     <div class="d-flex mb-2">
       <!-- GOLD -->
       <div class="label col-lg-3 dflex"
-        style="background-color: #9d002b;color: white;  min-height: 5em;">
+        style="background-color: #dbbd75;color: #260b0b;  min-height: 5em; border-radius: 40px 0 0 40px ;">
         <p>Gold</p>
         <h5>oz</h5>
       </div>
-      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);">
+      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);border-radius:  0 40px 40px 0 ;">
         <div class="buy">
-          <div class="buy-label">
+          <div class="buy-label" style="display: flex;justify-content: center;align-items: center;">
 
             <p>BID</p>
            
           </div>
           <div class="form-control input-box" id="goldInputLow"></div>
-          <label class="badge badge-success label-low mt-1" style="width: 100px; font-size:20px;"
+          <div style="display: flex;justify-content: center;align-items: center;">
+          <i class="fa-solid fa-caret-down" style="color: #ff0000;font-size: larger; "></i>
+          <label class="badge label-low mt-2" style="width: 100px; font-size:24px;"
             id="lowLabelGold">0</label>
+          </div>
         </div>
 
         <div class="sell">
-          <div class="sell-label">
+          <div class="sell-label" style="display: flex;justify-content: center;align-items: center;">
 
             <p>ASK</p>
            
           </div>
           <div class="form-control input-box" id="goldInputHigh"></div>
-          <label class="badge badge-success label-low mt-1" style="width: 100px; font-size:20px;"
+          <div style="display: flex;justify-content: center;align-items: center;">
+            <i class="fa-solid fa-caret-up" style="color: #008000;font-size: larger; "></i>
+          <label class="badge  label-low mt-1" style="width: 100px; font-size:24px;"
             id="highLabelGold">0</label>
+            </div>
         </div>
       </div>
     </div>
@@ -511,30 +519,36 @@
       <!-- silver -->
       <div class="d-flex ">
       <div class=" label d-flex col-lg-3"
-        style="background-color: #9d002b;color: white; min-height: 4em;">
+        style="background-color: #dbbd75;color: #260b0b; min-height: 4em;border-radius: 40px 0 0 40px ;">
         <p>Silver</p>
         <h5>oz</h5>
       </div>
-      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);">
+      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);border-radius:  0 40px 40px 0 ;">
         <div class="buy mt-2">
-          <div class="buy-label">
+          <div class="buy-label"  style="display: flex;justify-content: center;align-items: center;">
 
             <p style="font-size: 28px;">BID</p>
-           
+          
           </div>
           <div class="form-control input-box" id="silverInputLow" style="font-size: 34px;"></div>
-          <label class="badge badge-success label-low mt-2" style="width: 100px; font-size:24px;"
+          <div style="display: flex;justify-content: center;align-items: center;">
+            <i class="fa-solid fa-caret-down" style="color: #ff0000;font-size: larger; "></i>
+          <label class="badge  label-low mt-2" style="width: 100px; font-size:24px;"
             id="lowLabelSilver">0</label>
+            </div>
         </div>
-        <div class="sell">
+        <div class="sell mt-2"  style="display: flex;justify-content: center;align-items: center;">
           <div class="sell-label">
 
             <p style="font-size: 28px;">ASK</p>
            
           </div>
           <div class="form-control input-box" id="silverInputHigh" style="font-size: 34px;"></div>
-          <label class="badge badge-success label-low mt-1" style="width: 100px; font-size:24px;"
+          <div style="display: flex;justify-content: center;align-items: center;">
+            <i class="fa-solid fa-caret-up" style="color: #008000;font-size: larger; "></i>
+          <label class="badge  label-low mt-1" style="width: 100px; font-size:24px;"
             id="highLabelSilver">0</label>
+            </div>
         </div>
       </div>
     </div>
@@ -549,9 +563,9 @@
 
 
 
-  <div class="row " style="margin-top: -20px;">
-    <div class="col-lg-12 news-card" style="margin-left: 64px; max-width: 92.5%;">
-      <div class="news-label">
+  <div class="row " style="margin-top: -20px; ">
+    <div class="col-lg-12 news-card" style="margin-left: 64px; max-width: 92.5%;border-radius: 30px;">
+      <div class="news-label" style="border-radius: 30px 0 0 30px;margin-left: -15px;">
         <h3>PULPARAMBIL</h3>
         <p>Latest News</p>
       </div>
