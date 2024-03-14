@@ -35,7 +35,8 @@
     }
 
     .row {
-      padding: 25px;
+
+      padding: 25px 25px 25px 0px;
     }
 
     .card-logo {
@@ -75,7 +76,8 @@
     .card-table {
       border-collapse: collapse;
       border-spacing: 10px;
-      opacity: 0.9;
+    
+   
     }
 
     table {
@@ -85,21 +87,28 @@
       width: 100%;
       margin-left: 0px;
       font-size: 1.8vw;
-      color: #9d002b;
+      color: #000000;
     }
 
     .card-table tbody {
       margin-top: 10px;
 
     }
+    .card-table tbody tr{
+      margin-top: 10px;
+      opacity: 0.65;
+    }
 
     .card-table tr {
-      background-color: #f9f9f9;
+      background-color: #9c062e;
+     
       /* Light gray background for odd rows */
+      
     }
 
     .card-table tbody tr:nth-child(even) {
-      background-color: #e6e6e6;
+      background-color: #be0a3a;
+  
       /* Dark gray background for even rows */
     }
 
@@ -229,7 +238,7 @@
       flex-direction: row;
       background-color: #fff;
       opacity: 80%;
-      height: 70px;
+      height: 90px;
       width: 100%;
     }
 
@@ -366,413 +375,27 @@
     }
 
 
-    .clock {
-      width: 180px;
-      height: 180px;
-      background-color: #fff;
-      -webkit-box-shadow: 0 0 5px 0 #888;
-      box-shadow: 0 0 5px 0 #888;
-      border-radius: 100%;
-      position: relative;
-      perspective: 100px;
-      display: inline-block;
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 18px;
-      font-weight: bold;
-    }
+    .containerwt{
+	position: relative;
+	text-align: center;
+	background-color: transparent;
+	color: #ffffff;
+ 
+	width: auto;
+	height: 20vh;
+	display: flex;
+	align-items: start;
+	justify-content:flex-start;
+}
 
-    .clock .apm {
-      position: absolute;
-      top: 50%;
-      left: 60%;
-      transform: translateY(-50%);
-      font-size: 18px;
-      opacity: 0.3;
-      color: #000;
-    }
+.containerwt h2{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+	padding: 32px;
+	font-size: 42px;
+  font-weight: 800;
+}
 
-    .needle {
-      width: 50%;
-      -webkit-transform-origin: left center;
-      -moz-transform-origin: left center;
-      -ms-transform-origin: left center;
-      -o-transform-origin: left center;
-      transform-origin: left center;
-      -webkit-transform: translateY(-50%) rotateZ(-90deg);
-      -ms-transform: translateY(-50%) rotateZ(-90deg);
-      transform: translateY(-50%) rotateZ(-90deg);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-    }
-
-    .needle .hours,
-    .needle .minutes,
-    .needle .seconds {
-      display: block;
-      position: relative;
-    }
-
-    .needle .seconds {
-      -webkit-transform: rotateZ(0deg);
-      -ms-transform: rotateZ(0deg);
-      transform: rotateZ(0deg);
-      -webkit-transform-origin: left center;
-      -moz-transform-origin: left center;
-      -ms-transform-origin: left center;
-      -o-transform-origin: left center;
-      transform-origin: left center;
-
-    }
-
-    .needle .minutes {
-      -webkit-transform: rotateZ(0deg);
-      -ms-transform: rotateZ(0deg);
-      transform: rotateZ(0deg);
-      -webkit-transform-origin: left center;
-      -moz-transform-origin: left center;
-      -ms-transform-origin: left center;
-      -o-transform-origin: left center;
-      transform-origin: left center;
-    }
-
-    .needle .hours {
-      -webkit-transform: rotateZ(0deg);
-      -ms-transform: rotateZ(0deg);
-      transform: rotateZ(0deg);
-      -webkit-transform-origin: left center;
-      -moz-transform-origin: left center;
-      -ms-transform-origin: left center;
-      -o-transform-origin: left center;
-      transform-origin: left center;
-    }
-
-    .needle .hours:empty:before,
-    .needle .minutes:empty:before,
-    .needle .seconds:empty:before {
-      content: '';
-      display: block;
-      height: 2px;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-    }
-
-    .needle .seconds:empty:after {
-      content: '';
-      width: 10px;
-      height: 10px;
-      display: block;
-      border-radius: 100%;
-      position: absolute;
-      top: 50%;
-      left: -5px;
-      transform: translateY(-50%);
-    }
-
-    .needle .hours:empty:before {
-      width: 50%;
-      background-color: Tomato;
-
-    }
-
-    .needle .hours:empty:after {
-      background-color: Tomato;
-    }
-
-    .needle .minutes:empty:before {
-      width: 70%;
-      background-color: Tomato;
-    }
-
-    .needle .minutes:empty:after {
-      background-color: Tomato;
-    }
-
-    .needle .seconds:empty:before {
-      width: 90%;
-      background-color: Tomato;
-    }
-
-    .needle .seconds:empty:after {
-      background-color: Tomato;
-
-    }
-
-    .time-number {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-      height: 50%;
-    }
-
-    .time-number li {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      display: block;
-      -webkit-transform-origin: bottom center;
-      -moz-transform-origin: bottom center;
-      -ms-transform-origin: bottom center;
-      -o-transform-origin: bottom center;
-      transform-origin: bottom center;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-      bottom: 0;
-    }
-
-    .time-number li>span {
-      display: block;
-      margin-top: 5px;
-    }
-
-    /* 1 */
-    .time-number li:nth-child(1) {
-      -webkit-transform: translateX(-50%) rotateZ(30deg);
-      -ms-transform: translateX(-50%) rotateZ(30deg);
-      transform: translateX(-50%) rotateZ(30deg);
-    }
-
-    .time-number li:nth-child(1)>span {
-      -webkit-transform: rotateZ(-30deg);
-      -ms-transform: rotateZ(-30deg);
-      transform: rotateZ(-30deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(2) {
-      -webkit-transform: translateX(-50%) rotateZ(60deg);
-      -ms-transform: translateX(-50%) rotateZ(60deg);
-      transform: translateX(-50%) rotateZ(60deg);
-    }
-
-    .time-number li:nth-child(2)>span {
-      -webkit-transform: rotateZ(-60deg);
-      -ms-transform: rotateZ(-60deg);
-      transform: rotateZ(-60deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(3) {
-      -webkit-transform: translateX(-50%) rotateZ(90deg);
-      -ms-transform: translateX(-50%) rotateZ(90deg);
-      transform: translateX(-50%) rotateZ(90deg);
-    }
-
-    .time-number li:nth-child(3)>span {
-      -webkit-transform: rotateZ(-90deg);
-      -ms-transform: rotateZ(-90deg);
-      transform: rotateZ(-90deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(4) {
-      -webkit-transform: translateX(-50%) rotateZ(120deg);
-      -ms-transform: translateX(-50%) rotateZ(120deg);
-      transform: translateX(-50%) rotateZ(120deg);
-    }
-
-    .time-number li:nth-child(4)>span {
-      -webkit-transform: rotateZ(-120deg);
-      -ms-transform: rotateZ(-120deg);
-      transform: rotateZ(-120deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(5) {
-      -webkit-transform: translateX(-50%) rotateZ(150deg);
-      -ms-transform: translateX(-50%) rotateZ(150deg);
-      transform: translateX(-50%) rotateZ(150deg);
-    }
-
-    .time-number li:nth-child(5)>span {
-      -webkit-transform: rotateZ(-150deg);
-      -ms-transform: rotateZ(-150deg);
-      transform: rotateZ(-150deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(6) {
-      -webkit-transform: translateX(-50%) rotateZ(180deg);
-      -ms-transform: translateX(-50%) rotateZ(180deg);
-      transform: translateX(-50%) rotateZ(180deg);
-    }
-
-    .time-number li:nth-child(6)>span {
-      -webkit-transform: rotateZ(-180deg);
-      -ms-transform: rotateZ(-180deg);
-      transform: rotateZ(-180deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(7) {
-      -webkit-transform: translateX(-50%) rotateZ(210deg);
-      -ms-transform: translateX(-50%) rotateZ(210deg);
-      transform: translateX(-50%) rotateZ(210deg);
-    }
-
-    .time-number li:nth-child(7)>span {
-      -webkit-transform: rotateZ(-210deg);
-      -ms-transform: rotateZ(-210deg);
-      transform: rotateZ(-210deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(8) {
-      -webkit-transform: translateX(-50%) rotateZ(240deg);
-      -ms-transform: translateX(-50%) rotateZ(240deg);
-      transform: translateX(-50%) rotateZ(240deg);
-    }
-
-    .time-number li:nth-child(8)>span {
-      -webkit-transform: rotateZ(-240deg);
-      -ms-transform: rotateZ(-240deg);
-      transform: rotateZ(-240deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(9) {
-      -webkit-transform: translateX(-50%) rotateZ(270deg);
-      -ms-transform: translateX(-50%) rotateZ(270deg);
-      transform: translateX(-50%) rotateZ(270deg);
-    }
-
-    .time-number li:nth-child(9)>span {
-      -webkit-transform: rotateZ(-270deg);
-      -ms-transform: rotateZ(-270deg);
-      transform: rotateZ(-270deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(10) {
-      -webkit-transform: translateX(-50%) rotateZ(300deg);
-      -ms-transform: translateX(-50%) rotateZ(300deg);
-      transform: translateX(-50%) rotateZ(300deg);
-    }
-
-    .time-number li:nth-child(10)>span {
-      -webkit-transform: rotateZ(-300deg);
-      -ms-transform: rotateZ(-300deg);
-      transform: rotateZ(-300deg);
-    }
-
-    /* 2 */
-    .time-number li:nth-child(11) {
-      -webkit-transform: translateX(-50%) rotateZ(330deg);
-      -ms-transform: translateX(-50%) rotateZ(330deg);
-      transform: translateX(-50%) rotateZ(330deg);
-    }
-
-    .time-number li:nth-child(11)>span {
-      -webkit-transform: rotateZ(-330deg);
-      -ms-transform: rotateZ(-330deg);
-      transform: rotateZ(-330deg);
-    }
-
-    .clock.ui-dodgerblue .seconds:before,
-    .clock.ui-dodgerblue .seconds:after,
-    .clock.ui-dodgerblue .minutes:before,
-    .clock.ui-dodgerblue .hours:before,
-    .clock.ui-tomato .seconds:before,
-    .clock.ui-tomato .seconds:after,
-    .clock.ui-tomato .minutes:before,
-    .clock.ui-tomato .hours:before,
-    .clock.ui-black .seconds:before,
-    .clock.ui-black .seconds:after,
-    .clock.ui-black .minutes:before,
-    .clock.ui-black .hours:before,
-    .clock.ui-awesome .seconds:before,
-    .clock.ui-awesome .seconds:after,
-    .clock.ui-awesome .minutes:before,
-    .clock.ui-awesome .hours:before {
-      background-color: #FFF;
-    }
-
-    .clock.ui-banana-yellow .seconds:before,
-    .clock.ui-banana-yellow .seconds:after,
-    .clock.ui-banana-yellow .minutes:before,
-    .clock.ui-banana-yellow .hours:before {
-      background-color: #000;
-    }
-
-    .clock.ui-dodgerblue .apm,
-    .clock.ui-tomato .apm,
-    .clock.ui-black .apm,
-    .clock.ui-awesome .apm {
-      color: #FFF;
-      opacity: 1;
-    }
-
-    .clock.ui-banana-yellow .apm {
-      color: #000;
-      opacity: 1;
-    }
-
-    .clock.ui-dodgerblue {
-      background-color: dodgerblue;
-      color: #FFF;
-    }
-
-    .clock.ui-tomato {
-      background-color: tomato;
-      color: #FFF;
-    }
-
-    .clock.ui-black {
-      background-color: #141414;
-      color: #FFF;
-    }
-
-    .clock.ui-awesome {
-      background-color: #FF2052;
-      color: #FFF;
-    }
-
-    .clock.ui-banana-yellow {
-      background-color: #FFE135;
-      color: #000;
-    }
-
-    .clock.ui-large {
-      width: 400px;
-      height: 400px;
-      font-size: 40px;
-    }
-
-    .clock.ui-medium {
-      width: 180px;
-      height: 180px;
-    }
-
-    .clock.ui-small {
-      width: 100px;
-      height: 100px;
-    }
-
-
-
-    .demo {
-      display: inline-block;
-      margin: 20px;
-    }
-
-    .demo h4 {
-      margin-top: -10px;
-      color: antiquewhite;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      text-align: center;
-      -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-      padding: 10px;
-    }
+.containerwt h2 small{ font-size: 28px; }
 
 
   </style>
@@ -793,95 +416,26 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <div style="display:flex;justify-content: end; margin-top: 20px;">
-          <div class="demo ml-5">
-            <div class="clock ui-medium" data-timezone="Asia/Kolkata">
-              <div class="needle">
-                <span class="minutes"></span>
-                <span class="hours"></span>
-                <span class="seconds"></span>
-              </div>
-  
-              <ul class="time-number">
-                <li><span>1</span></li>
-                <li><span>2</span></li>
-                <li><span>3</span></li>
-                <li><span>4</span></li>
-                <li><span>5</span></li>
-                <li><span>6</span></li>
-                <li><span>7</span></li>
-                <li><span>8</span></li>
-                <li><span>9</span></li>
-                <li><span>10</span></li>
-                <li><span>11</span></li>
-                <li><span>12</span></li>
-              </ul>
-  
-              <div class="apm"></div>
-            </div>
-            <h4>India</h4>
-          </div>
-  
-          <div class="demo ml-5">
-            <div class="clock ui-medium" data-timezone="America/New_York">
-              <div class="needle">
-                <span class="minutes"></span>
-                <span class="hours"></span>
-                <span class="seconds"></span>
-              </div>
-  
-              <ul class="time-number">
-                <li><span>1</span></li>
-                <li><span>2</span></li>
-                <li><span>3</span></li>
-                <li><span>4</span></li>
-                <li><span>5</span></li>
-                <li><span>6</span></li>
-                <li><span>7</span></li>
-                <li><span>8</span></li>
-                <li><span>9</span></li>
-                <li><span>10</span></li>
-                <li><span>11</span></li>
-                <li><span>12</span></li>
-              </ul>
-  
-              <div class="apm"></div>
-            </div>
-            <h4>New York</h4>
-          </div>
-
-          <div class="demo ml-5">
-            <div class="clock ui-medium" data-timezone="Europe/London">
-              <div class="needle">
-                <span class="minutes"></span>
-                <span class="hours"></span>
-                <span class="seconds"></span>
-              </div>
-  
-              <ul class="time-number">
-                <li><span>1</span></li>
-                <li><span>2</span></li>
-                <li><span>3</span></li>
-                <li><span>4</span></li>
-                <li><span>5</span></li>
-                <li><span>6</span></li>
-                <li><span>7</span></li>
-                <li><span>8</span></li>
-                <li><span>9</span></li>
-                <li><span>10</span></li>
-                <li><span>11</span></li>
-                <li><span>12</span></li>
-              </ul>
-  
-              <div class="apm"></div>
-            </div>
-            <h4>London</h4>
-          </div>
-  
+        <div class="containerwt">
+          
+          <h2 data-locale="New York" data-offset="-4">
+            <p></p>
+            New York
+          </h2>
+          
+          <h2 data-locale="UK" data-offset="+0">
+            <p></p>
+            UK <small>(London)</small>
+          </h2>
+          
+          <h2 data-locale="india" data-offset="+5.5">
+            <p></p>
+            INDIA
+          </h2>
         </div>
       </div>
     </div>
-    <div class=" col-lg-7" style=" box-shadow:2px 2px 10px #424242">
+    <div class=" col-lg-7" style=" box-shadow:2px 2px 10px #424242;margin-left: 60px;">
     <div class="col-lg-12  mr-3 mt-3 mb-3">
       <div class="card-table">
         <table>
@@ -913,7 +467,7 @@
 </div>
 
 
-    <div class=" col-lg-4" style=" box-shadow:2px 2px 10px #424242">
+    <div class=" col-lg-4" style=" box-shadow:2px 2px 10px #424242;">
     <div class=" col-lg-12 gold-silver gold d-block"  style="margin-bottom: 20px;">
     
       <div class="label" style="display: flex;justify-content: center;align-items: center; background-color:#f9a19f ; color: #9d002b; margin:18px 0;">
@@ -1094,6 +648,38 @@
 
   </script>
 
+<script>
+// search all desired clocks
+function searchClocks() {
+    document.querySelectorAll('.containerwt h2').forEach(item => {
+        const timezone = {
+            locale: item.getAttribute('data-locale'),
+            offset: item.getAttribute('data-offset')
+        };
+
+        setInterval(() => {
+            item.querySelector('p').innerHTML = calcTime(timezone);
+        }, 1000);
+    })
+}
+
+// get local time (browser based)
+function calcTime(timezone) {
+    const d = new Date(),
+        utc = d.getTime() + (d.getTimezoneOffset() * 60000),
+        nd = new Date(utc + (3600000 * timezone.offset));
+
+    const hours = nd.getHours().toString().padStart(2, '0');
+    const minutes = nd.getMinutes().toString().padStart(2, '0');
+    const seconds = nd.getSeconds().toString().padStart(2, '0');
+
+    return `${hours}:${minutes}:${seconds}`;
+}
+
+searchClocks();
+
+  </script>
+  
   <script>
     // Check if the screen width is below a certain threshold (e.g., 1000 pixels)
     if (window.innerWidth < 1024) {
