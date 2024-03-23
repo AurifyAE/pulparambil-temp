@@ -204,7 +204,7 @@
     }
 
 
-    .news-card {
+    /* .news-card {
       display: flex;
       flex-direction: row;
       background-color: #fff;
@@ -243,7 +243,7 @@
       font-size: 1.8vw;
       color: black;
       font-weight: 400;
-    }
+    } */
 
     .calendar {
       position: relative;
@@ -579,7 +579,7 @@
 
 
 
-  <div class="row " style="margin-top: -50px;">
+  <!-- <div class="row " style="margin-top: -50px;">
     <div class="col-lg-12 news-card" style="margin-left: 15px; max-width: 98.5%;">
       <div class="col-lg-3 news-label">
         <div class="row " style="margin-top: -20px; ">
@@ -589,9 +589,18 @@
               <p>Latest News</p>
             </div>
             <div class="col-lg-9 news">
-              <!-- Display News Here -->
               <marquee behavior="scrolling" direction="left" id="displayNews">-</marquee>
             </div>
+          </div>
+        </div> -->
+
+        <div class="col-lg-12" style="display: flex; flex-direction: row; width: 97%; margin-left: 25px;">
+          <div class="col-lg-3 news-label" style="display: flex; flex-direction: column; border-radius:  30px 0 0 30px; background-color: #dbbd75; padding: 10px; justify-content: center; align-items: center; height: max-content;">
+            <h3 style="font-size: 1.4vw; font-weight: 600; color: black;">PULPARAMBIL</h3>
+            <p style="font-size: 1.1vw; font-weight: 600; color: black;">Latest News</p>
+          </div>
+          <div class="col-lg-9 news" style="background-color: rgba(255, 255, 255, 0.9); border-radius:  0 30px 30px 0; height: max-content;">
+            <marquee behavior="scrolling" direction="left" id="displayNews" style="font-size: 1.8vw; font-weight: 600; color: black; padding: 25px; height: max-content;">-</marquee>
           </div>
         </div>
 

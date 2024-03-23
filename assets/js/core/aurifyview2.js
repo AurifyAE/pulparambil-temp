@@ -381,7 +381,7 @@ async function showTable() {
                         const buyAEDValue = ((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(2);
                         document.getElementById('head1').textContent = metal;
                         document.getElementById('head12').textContent = purity;
-                        document.getElementById('head13').textContent = unit;
+                        // document.getElementById('head13').textContent = unit;
                         document.getElementById('head14').textContent = weight;
                         document.getElementById('data1').textContent = sellAEDValue
                     } else {
@@ -390,7 +390,7 @@ async function showTable() {
                         const buyAEDValue = parseInt((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(0);
                         document.getElementById('head1').textContent = metal;
                         document.getElementById('head12').textContent = purity;
-                        document.getElementById('head13').textContent = unit;
+                        // document.getElementById('head13').textContent = unit;
                         document.getElementById('head14').textContent = weight;
                         document.getElementById('data1').textContent = sellAEDValue.toFixed(0)
                     }
@@ -420,7 +420,7 @@ async function showTable() {
                         const buyAEDValue = ((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(2);
                         document.getElementById('head2').textContent = metal;
                         document.getElementById('head22').textContent = purity;
-                        document.getElementById('head23').textContent = unit;
+                        // document.getElementById('head23').textContent = unit;
                         document.getElementById('head24').textContent = weight;
                         document.getElementById('data2').textContent = sellAEDValue
                     } else {
@@ -429,7 +429,7 @@ async function showTable() {
                         const buyAEDValue = parseInt((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(0);
                         document.getElementById('head2').textContent = metal;
                         document.getElementById('head22').textContent = purity;
-                        document.getElementById('head23').textContent = unit;
+                        // document.getElementById('head23').textContent = unit;
                         document.getElementById('head24').textContent = weight;
                         document.getElementById('data2').textContent = sellAEDValue.toFixed(0)
                     }
@@ -458,7 +458,7 @@ async function showTable() {
                         const buyAEDValue = ((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(2);
                         document.getElementById('head3').textContent = metal;
                         document.getElementById('head32').textContent = purity;
-                        document.getElementById('head33').textContent = unit;
+                        // document.getElementById('head33').textContent = unit;
                         document.getElementById('head34').textContent = weight;
                         document.getElementById('data3').textContent = sellAEDValue
                     } else {
@@ -467,7 +467,7 @@ async function showTable() {
                         const buyAEDValue = parseInt((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(0);
                         document.getElementById('head3').textContent = metal;
                         document.getElementById('head32').textContent = purity;
-                        document.getElementById('head33').textContent = unit;
+                        // document.getElementById('head33').textContent = unit;
                         document.getElementById('head34').textContent = weight;
                         document.getElementById('data3').textContent = sellAEDValue.toFixed(0)
                     }
@@ -496,7 +496,7 @@ async function showTable() {
                         const buyAEDValue = ((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(2);
                         document.getElementById('head4').textContent = metal;
                         document.getElementById('head42').textContent = purity;
-                        document.getElementById('head43').textContent = unit;
+                        // document.getElementById('head43').textContent = unit;
                         document.getElementById('head44').textContent = weight;
                         document.getElementById('data4').textContent = sellAEDValue
                     } else {
@@ -505,7 +505,7 @@ async function showTable() {
                         const buyAEDValue = parseInt((parseFloat(goldValue) + parseFloat(bidSpreadValue)) * unit * unitMultiplier * (purity / Math.pow(10, purity.length)) + parseFloat(buyPremium)).toFixed(0);
                         document.getElementById('head4').textContent = metal;
                         document.getElementById('head42').textContent = purity;
-                        document.getElementById('head43').textContent = unit;
+                        // document.getElementById('head43').textContent = unit;
                         document.getElementById('head44').textContent = weight;
                         document.getElementById('data4').textContent = sellAEDValue.toFixed(0)
                     }
