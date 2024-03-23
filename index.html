@@ -13,7 +13,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!--     Fonts and icons     -->
   <script src="https://kit.fontawesome.com/0e1fa7c1a3.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -74,63 +74,23 @@
     }
 
     .card-table {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       border-collapse: collapse;
       border-spacing: 10px;
-    
-   
+      padding: 10px;
     }
 
-    table {
-      display: inline-table;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-left: 0px;
-      font-size: 1.8vw;
-      color: #fff;
+    .card-table .row{
+      display: flex;
+      justify-content: space-between;
     }
 
-    .card-table tbody {
-      margin-top: 10px;
-
-    }
-    .card-table tbody tr{
-      margin-top: 10px;
-    }
-
-    .card-table tr {
-      background-color: transparent;
-     
-      /* Light gray background for odd rows */
-      
-    }
-
-    .card-table tbody tr:nth-child(even) {
-    background-color: transparent; /* Alternate row background color */
-  }
-
-
-
-
-    .card-table th {
-    background-color:transparent;
-    color: #dbbd75;
-    font-weight: bold;
-    padding: 12px;
-    text-align: center;
-  }
-
-    /* .card-table tbody td {} */
-
-    .card-table td,
-  .card-table th {
-    padding: 12px;
-    text-align: center;
-
-  }
-
-    .card-table td {
-      font-weight: bold;
+    .card-table .row .column{
+      text-align: center;
+      width: 45%;
+      margin: 20px;
     }
 
     .silver-table td {
@@ -138,8 +98,9 @@
     }
 
     .card-table tbody tr:hover {
-    background-color: #ddd; /* Hover effect */
-  }
+      background-color: #ddd;
+      /* Hover effect */
+    }
 
     .date-time {
       display: flex;
@@ -194,6 +155,16 @@
 
     .gold-silver .label {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.6vw;
+      font-weight: 600;
+    }
+
+    .gold-silver .label div {
+      display: flex;
+      flex-direction: r;
       align-items: center;
       font-size: 1.6vw;
       font-weight: 600;
@@ -370,41 +341,44 @@
     }
 
     #date {
-      font-family:'sans-serif';
+      font-family: 'sans-serif';
       letter-spacing: 3px;
       font-size: 1em;
-      font-family:'sans-serif';
+      font-family: 'sans-serif';
       color: #fff;
     }
 
 
-    .containerwt{
-	position: relative;
-	text-align: center;
-	background-color: transparent;
-	color: #ffffff;
-	height: 20vh;
-	display: flex;
-	align-items: center;
-	justify-content:space-evenly;
-}
+    .containerwt {
+      position: relative;
+      text-align: center;
+      background-color: transparent;
+      color: #ffffff;
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
 
-.containerwt h2{
-  font-family:'sans-serif';
-	padding: 20px;
-	font-size: 1.5em;
-  font-weight: 800;
- 
-}
-.containerwt span{
-  font-size: 0.8em;
-  padding: 10px;
-  background-color: #dbbd75;
-  color: #260b0b;
-  border-radius: 20px;
-}
+    .containerwt h2 {
+      font-family: 'sans-serif';
+      padding: 20px;
+      font-size: 1.5em;
+      font-weight: 800;
 
-.containerwt h2 small{ font-size: 26px; }
+    }
+
+    .containerwt span {
+      font-size: 0.8em;
+      padding: 10px;
+      background-color: #dbbd75;
+      color: #260b0b;
+      border-radius: 20px;
+    }
+
+    .containerwt h2 small {
+      font-size: 26px;
+    }
   </style>
 </head>
 
@@ -412,7 +386,8 @@
   <div class="row">
     <div class="col-lg-12 d-flex">
       <div class="col-lg-3">
-        <img class="logo" src="./Pulparambil white logo.png" alt="pulparambil logo" style="width: 120%;margin-top:20px;margin-left: 5%;">
+        <img class="logo" src="./Pulparambil white logo.png" alt="pulparambil logo"
+          style="width: 120%;margin-top:20px;margin-left: 5%;">
       </div>
       <div class="col-lg-3 date-time">
         <div id="clockdate">
@@ -424,17 +399,17 @@
       </div>
       <div class="col-lg-5 mb-5" style="box-shadow:2px 2px 10px #424242;margin-left: 10px; border-radius: 40px;">
         <div class="containerwt">
-          
+
           <h2 data-locale="New York" data-offset="-4">
             <p></p>
             <span>&nbsp;New York&nbsp;</span>
           </h2>
-          
+
           <h2 data-locale="UK" data-offset="+0">
             <p></p>
             <span>&nbsp;UK <small>(London)</small>&nbsp;</span>
           </h2>
-          
+
           <h2 data-locale="india" data-offset="+5.5">
             <p></p>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;India&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -443,121 +418,160 @@
       </div>
     </div>
     <div class=" col-lg-7" style=" box-shadow:2px 2px 10px #424242;margin-left: 60px; border-radius: 40px;">
-    <div class="col-lg-12  mr-3 mt-3 mb-3">
-      <div class="card-table">
-        <table>
-          <thead style="margin-bottom: 0px;">
-            <tr>
-              <th colspan="2">COMMODITY</th>
-              <th>UNIT</th>
-              <th>BID (<span id="currencySymbol">AED</span>)</th>
-              <th>ASK (<span id="currencySymbol">AED</span>)</th>
-            </tr>
-            <tr style="height: 10px;background-color: transparent;"></tr>
-          </thead>
-
-          <tbody id="tableBodyTV">
-            <!-- Table body content will be dynamically updated here -->
-          </tbody>
-          <!-- <tbody class="silver-table">
-            <tr>
-              <td style="text-align: right;">Silver</td>
-              <td style="text-align: left; font-size:28px;" >999</td>
-              <td>1 KG</td>
-              <td id="silverBidTd"></td>
-              <td id="silverAskTd"></td>
-            </tr>
-          </tbody> -->
-        </table>
+      <div class="col-lg-12  mr-3 mt-3 mb-3">
+        <div class="card-table">
+          <div class="row">
+            <div style="border-radius: 25px;" class="column">
+              <div
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head1" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head12"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head13"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head14"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+              </div>
+              <div
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
+                <p id="data1" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+              </div>
+            </div>
+            <div style="border-radius: 25px;" class="column">
+              <div
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head2" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head22"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head23"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head24"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+              </div>
+              <div
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
+                <p id="data2" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div style="border-radius: 25px;" class="column">
+              <div
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head3" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head32"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head33"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head34"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+              </div>
+              <div
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
+                <p id="data3" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+              </div>
+            </div>
+            <div style="border-radius: 25px;" class="column">
+              <div
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head4" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head42"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head43"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head44"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+              </div>
+              <div
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
+                <p id="data4" style="font-size: 2vw; font-weight: 600; color: black;"></p></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-</div>
+
 
 
     <div class=" col-lg-4">
-    <div class=" col-lg-12 gold-silver gold d-block"  style="margin-bottom: 20px;">
-    
-      <div class="label" style="display: flex;justify-content: center;align-items: center; background-color:transparent;  color: #fff; margin:18px 0;">
-      <p>Spot Rate (&nbsp;$&nbsp;)</p>
-    </div>
-    <div class="d-flex mb-2">
-      <!-- GOLD -->
-      <div class="label col-lg-3 dflex"
-        style="background-color: #dbbd75;color: #260b0b;  min-height: 5em; border-radius: 40px 0 0 40px ;">
-        <p>Gold</p>
-        <h5>oz</h5>
-      </div>
-      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);border-radius:  0 40px 40px 0 ;">
-        <div class="buy">
-          <div class="buy-label" style="display: flex;justify-content: center;align-items: center;">
+      <div class=" col-lg-12 gold-silver gold d-block" style="margin-bottom: 20px;">
 
-            <p>BID</p>
-           
-          </div>
-          <div class="form-control input-box" id="goldInputLow"></div>
-          <div style="display: flex;justify-content: center;align-items: center;">
-          <i class="fa-solid fa-caret-down" style="color: #ff0000;font-size: larger; "></i>
-          <label class="badge label-low mt-2" style="width: 100px; font-size:24px;"
-            id="lowLabelGold">0</label>
-          </div>
+        <div class="label"
+          style="display: flex;justify-content: center;align-items: center; background-color:transparent;  color: #fff; margin:18px 0;">
+          <p>Spot Rate (&nbsp;$&nbsp;)</p>
         </div>
-
-        <div class="sell">
-          <div class="sell-label" style="display: flex;justify-content: center;align-items: center;">
-
-            <p>ASK</p>
-           
-          </div>
-          <div class="form-control input-box" id="goldInputHigh"></div>
-          <div style="display: flex;justify-content: center;align-items: center;">
-            <i class="fa-solid fa-caret-up" style="color: #008000;font-size: larger; "></i>
-          <label class="badge  label-low mt-1" style="width: 100px; font-size:24px;"
-            id="highLabelGold">0</label>
+        <div class="d-flex mb-2">
+          <!-- GOLD -->
+          <div class="label col-lg-3 dflex"
+            style="background-color: #dbbd75;color: #260b0b;  min-height: 5em; border-radius: 40px 0 0 40px ;">
+            <div>
+              <p>Gold</p>
+              <h5>oz</h5>
             </div>
-        </div>
-      </div>
-    </div>
-
-      <!-- silver -->
-      <div class="d-flex ">
-      <div class=" label d-flex col-lg-3"
-        style="background-color: #dbbd75;color: #260b0b; min-height: 4em;border-radius: 40px 0 0 40px ;">
-        <p>Silver</p>
-        <h5>oz</h5>
-      </div>
-      <div class="d-flex col-lg-9" style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);border-radius:  0 40px 40px 0 ;">
-        <div class="buy mt-2">
-          <div class="buy-label"  style="display: flex;justify-content: center;align-items: center;">
-
-            <p style="font-size: 28px;">BID</p>
-          
+            <img src="gold.png" alt="" srcset="" style="width: 90%;">
           </div>
-          <div class="form-control input-box" id="silverInputLow" style="font-size: 34px;"></div>
-          <div style="display: flex;justify-content: center;align-items: center;">
-            <i class="fa-solid fa-caret-down" style="color: #ff0000;font-size: larger; "></i>
-          <label class="badge  label-low mt-2" style="width: 100px; font-size:24px;"
-            id="lowLabelSilver">0</label>
-            </div>
-        </div>
-        <div class="sell mt-2"  style="display: flex;justify-content: center;align-items: center;">
-          <div class="sell-label">
+          <div class="d-flex col-lg-9"
+            style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);border-radius:  0 40px 40px 0 ;">
+            <div class="buy">
+              <div class="buy-label" style="display: flex;justify-content: center;align-items: center;">
 
-            <p style="font-size: 28px;">ASK</p>
-           
-          </div>
-          <div class="form-control input-box" id="silverInputHigh" style="font-size: 34px;"></div>
-          <div style="display: flex;justify-content: center;align-items: center;">
-            <i class="fa-solid fa-caret-up" style="color: #008000;font-size: larger; "></i>
-          <label class="badge  label-low mt-1" style="width: 100px; font-size:24px;"
-            id="highLabelSilver">0</label>
+                <p>BID</p>
+
+              </div>
+              <div class="form-control input-box" id="goldInputLow"></div>
+              <div style="display: flex;justify-content: center;align-items: center;">
+                <i class="fa-solid fa-caret-down" style="color: #ff0000;font-size: larger; "></i>
+                <label class="badge label-low mt-2" style="width: 100px; font-size:24px;" id="lowLabelGold">0</label>
+              </div>
             </div>
+
+            <div class="sell">
+              <div class="sell-label" style="display: flex;justify-content: center;align-items: center;">
+
+                <p>ASK</p>
+
+              </div>
+              <div class="form-control input-box" id="goldInputHigh"></div>
+              <div style="display: flex;justify-content: center;align-items: center;">
+                <i class="fa-solid fa-caret-up" style="color: #008000;font-size: larger; "></i>
+                <label class="badge  label-low mt-1" style="width: 100px; font-size:24px;" id="highLabelGold">0</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- silver -->
+        <div class="d-flex ">
+          <div class=" label d-flex col-lg-3"
+            style="background-color: #dbbd75;color: #260b0b; min-height: 4em;border-radius: 40px 0 0 40px ;">
+            <div>
+              <p>Silver</p>
+              <h5>oz</h5>
+            </div>
+            <img src="silver5.png" alt="" srcset="" style="width: 100%;">
+          </div>
+          <div class="d-flex col-lg-9"
+            style="justify-content:space-evenly; background-color: rgba(255, 255, 255, 0.9);border-radius:  0 40px 40px 0 ;">
+            <div class="buy mt-2">
+              <div class="buy-label" style="display: flex;justify-content: center;align-items: center;">
+
+                <p style="font-size: 28px;">BID</p>
+
+              </div>
+              <div class="form-control input-box" id="silverInputLow" style="font-size: 34px;"></div>
+              <div style="display: flex;justify-content: center;align-items: center;">
+                <i class="fa-solid fa-caret-down" style="color: #ff0000;font-size: larger; "></i>
+                <label class="badge  label-low mt-2" style="width: 100px; font-size:24px;" id="lowLabelSilver">0</label>
+              </div>
+            </div>
+            <div class="sell mt-2" style="display: flex;justify-content: center;align-items: center;">
+              <div class="sell-label">
+
+                <p style="font-size: 28px;">ASK</p>
+
+              </div>
+              <div class="form-control input-box" id="silverInputHigh" style="font-size: 34px;"></div>
+              <div style="display: flex;justify-content: center;align-items: center;">
+                <i class="fa-solid fa-caret-up" style="color: #008000;font-size: larger; "></i>
+                <label class="badge  label-low mt-1" style="width: 100px; font-size:24px;"
+                  id="highLabelSilver">0</label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
     </div>
 
-  </div>
-    
 
 
 
@@ -568,44 +582,44 @@
   <div class="row " style="margin-top: -50px;">
     <div class="col-lg-12 news-card" style="margin-left: 15px; max-width: 98.5%;">
       <div class="col-lg-3 news-label">
-  <div class="row " style="margin-top: -20px; ">
-    <div class="col-lg-12 news-card" style="margin-left: 64px; max-width: 92.5%;border-radius: 30px;">
-      <div class="news-label" style="border-radius: 30px 0 0 30px;margin-left: -15px;">
-        <h3>PULPARAMBIL</h3>
-        <p>Latest News</p>
-      </div>
-      <div class="col-lg-9 news">
-        <!-- Display News Here -->
-        <marquee behavior="scrolling" direction="left" id="displayNews">-</marquee>
-      </div>
-    </div>
-  </div>
-
-  <div class="rate-card">
-    <div class="col-lg-3">
-      <div class="card">
-        <div class="card-body">
-          <div class="gold-card">
-            <img src="./assets/img/gold.png" alt="">
-            <h3>Gold</h3>
+        <div class="row " style="margin-top: -20px; ">
+          <div class="col-lg-12 news-card" style="margin-left: 64px; max-width: 92.5%;border-radius: 30px;">
+            <div class="news-label" style="border-radius: 30px 0 0 30px;margin-left: -15px;">
+              <h3>PULPARAMBIL</h3>
+              <p>Latest News</p>
+            </div>
+            <div class="col-lg-9 news">
+              <!-- Display News Here -->
+              <marquee behavior="scrolling" direction="left" id="displayNews">-</marquee>
+            </div>
           </div>
-          <p id="goldRate"></p>
         </div>
-      </div>
-    </div>
 
-    <div class="col-lg-3">
-      <div class="card">
-        <div class="card-body">
-          <div class="silver-card">
-            <img src="./assets/img/silver.png" alt="">
-            <h3>Silver</h3>
+        <div class="rate-card">
+          <div class="col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="gold-card">
+                  <img src="./assets/img/gold.png" alt="">
+                  <h3>Gold</h3>
+                </div>
+                <p id="goldRate"></p>
+              </div>
+            </div>
           </div>
-          <p id="silverRate"></p>
+
+          <div class="col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="silver-card">
+                  <img src="./assets/img/silver.png" alt="">
+                  <h3>Silver</h3>
+                </div>
+                <p id="silverRate"></p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -614,105 +628,105 @@
 
 
 
-  <!-- Link Bootstrap JS and Popper.js -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="./worldclock.js"></script>
-  <script>
-    function startTime() {
-      function updateTime() { 
-        var today = new Date();
-        var hr = today.getHours();
-        var min = today.getMinutes();
-        // var sec = today.getSeconds();
-        var ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
-        hr = (hr == 0) ? 12 : hr;
-        hr = (hr > 12) ? hr - 12 : hr;
-        // Add a zero in front of numbers < 10
-        hr = checkTime(hr);
-        min = checkTime(min);
-        // sec = checkTime(sec);
-        // + ":" + sec
-        document.getElementById("clock").innerHTML = hr + ":" + min  + " " + ap;
+        <!-- Link Bootstrap JS and Popper.js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./worldclock.js"></script>
+        <script>
+          function startTime() {
+            function updateTime() {
+              var today = new Date();
+              var hr = today.getHours();
+              var min = today.getMinutes();
+              // var sec = today.getSeconds();
+              var ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+              hr = (hr == 0) ? 12 : hr;
+              hr = (hr > 12) ? hr - 12 : hr;
+              // Add a zero in front of numbers < 10
+              hr = checkTime(hr);
+              min = checkTime(min);
+              // sec = checkTime(sec);
+              // + ":" + sec
+              document.getElementById("clock").innerHTML = hr + ":" + min + " " + ap;
 
-        var months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
-        var days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-        var curWeekDay = days[today.getDay()];
-        var curDay = today.getDate();
-        var curMonth = months[today.getMonth()];
-        var curYear = today.getFullYear();
-        var date = curWeekDay + ", " + curDay + " " + curMonth + " " + curYear;
-        document.getElementById("date").innerHTML = date;
-      }
+              var months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+              var days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+              var curWeekDay = days[today.getDay()];
+              var curDay = today.getDate();
+              var curMonth = months[today.getMonth()];
+              var curYear = today.getFullYear();
+              var date = curWeekDay + ", " + curDay + " " + curMonth + " " + curYear;
+              document.getElementById("date").innerHTML = date;
+            }
 
-      // Call updateTime immediately to set the initial values
-      updateTime();
+            // Call updateTime immediately to set the initial values
+            updateTime();
 
-      // Update every second using setInterval
-      var intervalId = setInterval(updateTime, 1000);
+            // Update every second using setInterval
+            var intervalId = setInterval(updateTime, 1000);
 
-      // Optional: If you want to stop the interval after a specific duration (e.g., 30 minutes)
-      // Uncomment the following lines:
-      // setTimeout(function() {
-      //   clearInterval(intervalId);
-      // }, 30 * 60 * 1000);
-    }
+            // Optional: If you want to stop the interval after a specific duration (e.g., 30 minutes)
+            // Uncomment the following lines:
+            // setTimeout(function() {
+            //   clearInterval(intervalId);
+            // }, 30 * 60 * 1000);
+          }
 
-    function checkTime(i) {
-      return (i < 10) ? "0" + i : i;
-    }
+          function checkTime(i) {
+            return (i < 10) ? "0" + i : i;
+          }
 
-    startTime();
+          startTime();
 
-  </script>
+        </script>
 
-<script>
-// search all desired clocks
-function searchClocks() {
-    document.querySelectorAll('.containerwt h2').forEach(item => {
-        const timezone = {
-            locale: item.getAttribute('data-locale'),
-            offset: item.getAttribute('data-offset')
-        };
+        <script>
+          // search all desired clocks
+          function searchClocks() {
+            document.querySelectorAll('.containerwt h2').forEach(item => {
+              const timezone = {
+                locale: item.getAttribute('data-locale'),
+                offset: item.getAttribute('data-offset')
+              };
 
-        setInterval(() => {
-            item.querySelector('p').innerHTML = calcTime(timezone);
-        }, 1000);
-    })
-}
+              setInterval(() => {
+                item.querySelector('p').innerHTML = calcTime(timezone);
+              }, 1000);
+            })
+          }
 
-// get local time (browser based)
-function calcTime(timezone) {
-    const d = new Date(),
-        utc = d.getTime() + (d.getTimezoneOffset() * 60000),
-        nd = new Date(utc + (3600000 * timezone.offset));
+          // get local time (browser based)
+          function calcTime(timezone) {
+            const d = new Date(),
+              utc = d.getTime() + (d.getTimezoneOffset() * 60000),
+              nd = new Date(utc + (3600000 * timezone.offset));
 
-    const hours = nd.getHours().toString().padStart(2, '0');
-    const minutes = nd.getMinutes().toString().padStart(2, '0');
-    const seconds = nd.getSeconds().toString().padStart(2, '0');
+            const hours = nd.getHours().toString().padStart(2, '0');
+            const minutes = nd.getMinutes().toString().padStart(2, '0');
+            const seconds = nd.getSeconds().toString().padStart(2, '0');
 
-    return `${hours}:${minutes}:${seconds}`;
-}
+            return `${hours}:${minutes}:${seconds}`;
+          }
 
-searchClocks();
+          searchClocks();
 
-  </script>
-  
-  <script>
-    // Check if the screen width is below a certain threshold (e.g., 1000 pixels)
-    if (window.innerWidth < 1024) {
-      // Redirect users from mobile and tablet devices to a different page or show an error message
-      window.location.href = '../../../pages/error.html'; // Redirect to a mobile error page
-    }
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
-  <script type="module" src="./config/db.js"></script>
-  <script type="module" src="./assets/js/core/spotrateDB.js"></script>
-  <script type="module" defer src="./assets/js/core/displayNews.js"></script>
-  <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
+        </script>
+
+        <script>
+          // Check if the screen width is below a certain threshold (e.g., 1000 pixels)
+          if (window.innerWidth < 1024) {
+            // Redirect users from mobile and tablet devices to a different page or show an error message
+            window.location.href = '../../../pages/error.html'; // Redirect to a mobile error page
+          }
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+        <script type="module" src="./config/db.js"></script>
+        <script type="module" src="./assets/js/core/spotrateDB.js"></script>
+        <script type="module" defer src="./assets/js/core/displayNews.js"></script>
+        <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
 </body>
 
 </html>
