@@ -1,1 +1,1 @@
-https://aurifyae.github.io/Misnagold/
+http://pulparambil.aurify.ae/

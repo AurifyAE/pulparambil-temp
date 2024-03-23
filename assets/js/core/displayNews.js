@@ -44,7 +44,7 @@ function displayNews() {
             console.log(newsArray);
             // Display the news content in a single div
             const displayNewsDiv = document.getElementById("displayNews");
-            displayNewsDiv.innerHTML = newsArray.join(" >> ");
+            displayNewsDiv.innerHTML = newsArray.join("           >>            ");
 
         })
         .catch((error) => {
