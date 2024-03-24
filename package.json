@@ -48,6 +48,7 @@
   },
   "homepage": "http://creative-tim.com/product/soft-ui-dashboard",
   "dependencies": {
+    "date-fns-tz": "^2.0.1",
     "socket.io-client": "^4.7.4"
   }
 }

@@ -14,6 +14,8 @@
   <!--     Fonts and icons     -->
   <script src="https://kit.fontawesome.com/0e1fa7c1a3.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+  <link rel="stylesheet" href="./clock.css">
+  <script src="./assets/js/core/clock.js" type="module"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -35,8 +37,9 @@
     }
 
     .row {
-
-      padding: 25px 25px 25px 0px;
+      padding: 25px 25px 25px 25px;
+      display: flex;
+      justify-content: space-between;
     }
 
     .card-logo {
@@ -82,15 +85,16 @@
       padding: 10px;
     }
 
-    .card-table .row{
+    .card-table .row {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      margin: 0 0 0 0;
     }
 
-    .card-table .row .column{
+    .card-table .row .column {
       text-align: center;
-      width: 45%;
-      margin: 20px;
+      width: 550px;
+      margin: 0 0 0 0;
     }
 
     .silver-table td {
@@ -116,16 +120,10 @@
       font-weight: 600;
     }
 
-
     .row2 {
       display: flex;
       flex-direction: row;
       margin-top: 50px;
-    }
-
-    .row {
-      display: flex;
-      justify-content: space-between;
     }
 
     .fading-label {
@@ -204,47 +202,6 @@
     }
 
 
-    /* .news-card {
-      display: flex;
-      flex-direction: row;
-      background-color: #fff;
-      opacity: 80%;
-      height: 70px;
-      width: 100%;
-      margin: 0;
-      height: 90px;
-      width: 110%;
-    }
-
-    .news-card .news-label {
-      display: flex;
-      width: 500px;
-      padding: 5px;
-      flex-direction: column;
-      align-items: center;
-      background-color: #dbbd75;
-      color: #260b0b;
-    }
-
-    .news-card .news-label h3 {
-      font-size: 1.4vw;
-      font-weight: 600;
-    }
-
-    .news-card .news-label p {
-      margin-top: -15px;
-      font-size: 1.1vw;
-      font-weight: 600;
-    }
-
-    .news-card .news {
-      display: flex;
-      padding: 5px;
-      font-size: 1.8vw;
-      color: black;
-      font-weight: 400;
-    } */
-
     .calendar {
       position: relative;
       width: 100%;
@@ -310,11 +267,8 @@
         url('./assets/fonts/digital-7.woff') format('woff');
     }
 
-    .clockdate-wrapper {
+    /* .clockdate-wrapper {
       background: transparent;
-      /* fallback for old browsers */
-      /* background: -webkit-linear-gradient(to right, #024a61, #005043);  Chrome 10-25, Safari 5.1-6 */
-      /* background: linear-gradient(to right, #024a61, #005043); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       padding: 25px;
       max-width: 100%;
       width: 100%;
@@ -378,7 +332,8 @@
 
     .containerwt h2 small {
       font-size: 26px;
-    }
+    } */
+
   </style>
 </head>
 
@@ -397,7 +352,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5 mb-5" style="box-shadow:2px 2px 10px #424242;margin-left: 10px; border-radius: 40px;">
+      <!-- <div class="col-lg-5 mb-5" style="box-shadow:2px 2px 10px #424242;margin-left: 10px; border-radius: 40px;">
         <div class="containerwt">
 
           <h2 data-locale="New York" data-offset="-4">
@@ -415,19 +370,46 @@
             <span>&nbsp;&nbsp;&nbsp;&nbsp;India&nbsp;&nbsp;&nbsp;&nbsp;</span>
           </h2>
         </div>
+      </div> -->
+
+      <div class="container">
+        <div class="clock--wrapper">
+          <h2>Algiers</h2>
+          <div class="clock" data-locale="Africa/Algiers">
+          </div>
+        </div>
+        <div class="clock--wrapper">
+          <h2>Denver</h2>
+          <div class="clock" data-locale="America/Denver">
+          </div>
+        </div>
+        <div class="clock--wrapper">
+          <h2>Pohnpei</h2>
+          <div class="clock" data-locale="Pacific/Pohnpei">
+          </div>
+        </div>
+        <div class="clock--wrapper">
+          <h2>Cocos</h2>
+          <div class="clock" data-locale="Indian/Cocos">
+          </div>
+        </div>
       </div>
     </div>
-    <div class=" col-lg-7" style=" box-shadow:2px 2px 10px #424242;margin-left: 60px; border-radius: 40px;">
-      <div class="col-lg-12  mr-3 mt-3 mb-3">
+
+
+    <main>
+      
+    </main>
+
+    <div class=" col-lg-7"
+      style=" box-shadow:2px 2px 10px #424242;margin-left: 60px; border-radius: 40px;  padding: 0;">
+      <div class="col-lg-12">
         <div class="card-table">
           <div class="row">
             <div style="border-radius: 25px;" class="column">
               <div
                 style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head1" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head12"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head13"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head14"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head1" style="font-size: 38px; font-weight: 600; color: black;">Silver KGBAR</p>
               </div>
               <div
                 style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
@@ -437,10 +419,7 @@
             <div style="border-radius: 25px;" class="column">
               <div
                 style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head2" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head22"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head23"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head24"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head2" style="font-size: 38px; font-weight: 600; color: black;">999 TTBAR</p>
               </div>
               <div
                 style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
@@ -452,10 +431,7 @@
             <div style="border-radius: 25px;" class="column">
               <div
                 style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head3" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head32"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head33"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head34"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head3" style="font-size: 38px; font-weight: 600; color: black;">9999 KGBAR</p>
               </div>
               <div
                 style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
@@ -465,14 +441,12 @@
             <div style="border-radius: 25px;" class="column">
               <div
                 style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head4" style="font-size: 38px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head42"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head43"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
-                <p id="head44"  style="font-size: 28px; margin-right: 10px; font-weight: 600; color: black;"></p>
+                <p id="head4" style="font-size: 38px; font-weight: 600; color: black;">995 KGBAR</p>
               </div>
               <div
                 style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
-                <p id="data4" style="font-size: 2vw; font-weight: 600; color: black;"></p></p>
+                <p id="data4" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+                </p>
               </div>
             </div>
           </div>
@@ -569,173 +543,154 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
+  <div class="col-lg-12 mb-5" style="display: flex; flex-direction: row; width: 97%; margin-left: 50px; height:90px;">
+    <div class="col-lg-3 news-label"
+      style="display: flex; flex-direction: column; border-radius:  30px 0 0 30px; background-color: #dbbd75; padding: 10px; justify-content: center; align-items: center; height: 90px;">
+      <h3 style="font-size: 1.5vw; font-weight: 600; color: black; margin-top: 15px;">PULPARAMBIL</h3>
+      <p style="font-size: 1.1vw; font-weight: 600; color: black; margin-top: -15px;">Latest News</p>
+    </div>
+    <div class="col-lg-9 news"
+      style="background-color: rgba(255, 255, 255, 0.9); border-radius:  0 30px 30px 0; height: 90px;">
+      <marquee behavior="scrolling" direction="left" id="displayNews"
+        style="font-size: 1.8vw; font-weight: 600; color: black; padding: 15px; height: max-content;">-</marquee>
+    </div>
+  </div>
+
+  <div class="rate-card">
+    <div class="col-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="gold-card">
+            <img src="./assets/img/gold.png" alt="">
+            <h3>Gold</h3>
+          </div>
+          <p id="goldRate"></p>
+        </div>
+      </div>
     </div>
 
-
-
-
+    <div class="col-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="silver-card">
+            <img src="./assets/img/silver.png" alt="">
+            <h3>Silver</h3>
+          </div>
+          <p id="silverRate"></p>
+        </div>
+      </div>
+    </div>
   </div>
 
 
 
-  <!-- <div class="row " style="margin-top: -50px;">
-    <div class="col-lg-12 news-card" style="margin-left: 15px; max-width: 98.5%;">
-      <div class="col-lg-3 news-label">
-        <div class="row " style="margin-top: -20px; ">
-          <div class="col-lg-12 news-card" style="margin-left: 64px; max-width: 92.5%;border-radius: 30px;">
-            <div class="news-label" style="border-radius: 30px 0 0 30px;margin-left: -15px;">
-              <h3>PULPARAMBIL</h3>
-              <p>Latest News</p>
-            </div>
-            <div class="col-lg-9 news">
-              <marquee behavior="scrolling" direction="left" id="displayNews">-</marquee>
-            </div>
-          </div>
-        </div> -->
-
-        <div class="col-lg-12 mb-5" style="display: flex; flex-direction: row; width: 97%; margin-left: 25px;">
-          <div class="col-lg-3 news-label" style="display: flex; flex-direction: column; border-radius:  30px 0 0 30px; background-color: #dbbd75; padding: 10px; justify-content: center; align-items: center; height: max-content;">
-            <h3 style="font-size: 1.4vw; font-weight: 600; color: black;">PULPARAMBIL</h3>
-            <p style="font-size: 1.1vw; font-weight: 600; color: black;">Latest News</p>
-          </div>
-          <div class="col-lg-9 news" style="background-color: rgba(255, 255, 255, 0.9); border-radius:  0 30px 30px 0; height: max-content;">
-            <marquee behavior="scrolling" direction="left" id="displayNews" style="font-size: 1.8vw; font-weight: 600; color: black; padding: 25px; height: max-content;">-</marquee>
-          </div>
-        </div>
-
-        <div class="rate-card">
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="card-body">
-                <div class="gold-card">
-                  <img src="./assets/img/gold.png" alt="">
-                  <h3>Gold</h3>
-                </div>
-                <p id="goldRate"></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="card-body">
-                <div class="silver-card">
-                  <img src="./assets/img/silver.png" alt="">
-                  <h3>Silver</h3>
-                </div>
-                <p id="silverRate"></p>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
 
 
 
+  <!-- Link Bootstrap JS and Popper.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./worldclock.js"></script>
+  <script>
+    function startTime() {
+      function updateTime() {
+        var today = new Date();
+        var hr = today.getHours();
+        var min = today.getMinutes();
+        // var sec = today.getSeconds();
+        var ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+        hr = (hr == 0) ? 12 : hr;
+        hr = (hr > 12) ? hr - 12 : hr;
+        // Add a zero in front of numbers < 10
+        hr = checkTime(hr);
+        min = checkTime(min);
+        // sec = checkTime(sec);
+        // + ":" + sec
+        document.getElementById("clock").innerHTML = hr + ":" + min + " " + ap;
 
+        var months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+        var days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+        var curWeekDay = days[today.getDay()];
+        var curDay = today.getDate();
+        var curMonth = months[today.getMonth()];
+        var curYear = today.getFullYear();
+        var date = curWeekDay + ", " + curDay + " " + curMonth + " " + curYear;
+        document.getElementById("date").innerHTML = date;
+      }
 
+      // Call updateTime immediately to set the initial values
+      updateTime();
 
-        <!-- Link Bootstrap JS and Popper.js -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="./worldclock.js"></script>
-        <script>
-          function startTime() {
-            function updateTime() {
-              var today = new Date();
-              var hr = today.getHours();
-              var min = today.getMinutes();
-              // var sec = today.getSeconds();
-              var ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
-              hr = (hr == 0) ? 12 : hr;
-              hr = (hr > 12) ? hr - 12 : hr;
-              // Add a zero in front of numbers < 10
-              hr = checkTime(hr);
-              min = checkTime(min);
-              // sec = checkTime(sec);
-              // + ":" + sec
-              document.getElementById("clock").innerHTML = hr + ":" + min + " " + ap;
+      // Update every second using setInterval
+      var intervalId = setInterval(updateTime, 1000);
 
-              var months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
-              var days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-              var curWeekDay = days[today.getDay()];
-              var curDay = today.getDate();
-              var curMonth = months[today.getMonth()];
-              var curYear = today.getFullYear();
-              var date = curWeekDay + ", " + curDay + " " + curMonth + " " + curYear;
-              document.getElementById("date").innerHTML = date;
-            }
+      // Optional: If you want to stop the interval after a specific duration (e.g., 30 minutes)
+      // Uncomment the following lines:
+      // setTimeout(function() {
+      //   clearInterval(intervalId);
+      // }, 30 * 60 * 1000);
+    }
 
-            // Call updateTime immediately to set the initial values
-            updateTime();
+    function checkTime(i) {
+      return (i < 10) ? "0" + i : i;
+    }
 
-            // Update every second using setInterval
-            var intervalId = setInterval(updateTime, 1000);
+    startTime();
 
-            // Optional: If you want to stop the interval after a specific duration (e.g., 30 minutes)
-            // Uncomment the following lines:
-            // setTimeout(function() {
-            //   clearInterval(intervalId);
-            // }, 30 * 60 * 1000);
-          }
+  </script>
 
-          function checkTime(i) {
-            return (i < 10) ? "0" + i : i;
-          }
+  <script>
+    // search all desired clocks
+    function searchClocks() {
+      document.querySelectorAll('.containerwt h2').forEach(item => {
+        const timezone = {
+          locale: item.getAttribute('data-locale'),
+          offset: item.getAttribute('data-offset')
+        };
 
-          startTime();
+        setInterval(() => {
+          item.querySelector('p').innerHTML = calcTime(timezone);
+        }, 1000);
+      })
+    }
 
-        </script>
+    // get local time (browser based)
+    function calcTime(timezone) {
+      const d = new Date(),
+        utc = d.getTime() + (d.getTimezoneOffset() * 60000),
+        nd = new Date(utc + (3600000 * timezone.offset));
 
-        <script>
-          // search all desired clocks
-          function searchClocks() {
-            document.querySelectorAll('.containerwt h2').forEach(item => {
-              const timezone = {
-                locale: item.getAttribute('data-locale'),
-                offset: item.getAttribute('data-offset')
-              };
+      const hours = nd.getHours().toString().padStart(2, '0');
+      const minutes = nd.getMinutes().toString().padStart(2, '0');
+      const seconds = nd.getSeconds().toString().padStart(2, '0');
 
-              setInterval(() => {
-                item.querySelector('p').innerHTML = calcTime(timezone);
-              }, 1000);
-            })
-          }
+      return `${hours}:${minutes}:${seconds}`;
+    }
 
-          // get local time (browser based)
-          function calcTime(timezone) {
-            const d = new Date(),
-              utc = d.getTime() + (d.getTimezoneOffset() * 60000),
-              nd = new Date(utc + (3600000 * timezone.offset));
+    searchClocks();
 
-            const hours = nd.getHours().toString().padStart(2, '0');
-            const minutes = nd.getMinutes().toString().padStart(2, '0');
-            const seconds = nd.getSeconds().toString().padStart(2, '0');
+  </script>
 
-            return `${hours}:${minutes}:${seconds}`;
-          }
-
-          searchClocks();
-
-        </script>
-
-        <script>
-          // Check if the screen width is below a certain threshold (e.g., 1000 pixels)
-          if (window.innerWidth < 1024) {
-            // Redirect users from mobile and tablet devices to a different page or show an error message
-            window.location.href = '../../../pages/error.html'; // Redirect to a mobile error page
-          }
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
-        <script type="module" src="./config/db.js"></script>
-        <script type="module" src="./assets/js/core/spotrateDB.js"></script>
-        <script type="module" defer src="./assets/js/core/displayNews.js"></script>
-        <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
+  <script>
+    // Check if the screen width is below a certain threshold (e.g., 1000 pixels)
+    if (window.innerWidth < 1024) {
+      // Redirect users from mobile and tablet devices to a different page or show an error message
+      window.location.href = '../../../pages/error.html'; // Redirect to a mobile error page
+    }
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+  <script type="module" src="./config/db.js"></script>
+  <script type="module" src="./assets/js/core/spotrateDB.js"></script>
+  <script type="module" defer src="./assets/js/core/displayNews.js"></script>
+  <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
 </body>
 
 </html>
