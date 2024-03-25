@@ -15,7 +15,7 @@
   <script src="https://kit.fontawesome.com/0e1fa7c1a3.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
   <link rel="stylesheet" href="./clock.css">
-  <script src="./assets/js/core/clock.js" type="module"></script>
+  <!-- <script src="./worldclock.js" type="module"></script> -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -786,7 +786,7 @@
         </div>
 
         <div class="demo ml-5">
-          <div class="clock ui-medium" data-timezone="Europe/London">
+          <div class="clock ui-medium"  data-timezone="Europe/London">
             <div class="needle">
               <span class="minutes"></span>
               <span class="hours"></span>
@@ -1069,7 +1069,7 @@
     function searchClocks() {
       document.querySelectorAll('.containerwt h2').forEach(item => {
         const timezone = {
-          locale: item.getAttribute('data-locale'),
+          locale: item.getAttribute('data-timezone'),
           offset: item.getAttribute('data-offset')
         };
 
