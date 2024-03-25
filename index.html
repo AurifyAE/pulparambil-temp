@@ -700,7 +700,7 @@
           style="width: 120%;margin-top:20px;margin-left: 5%;">
       </div>
       <div class="col-lg-3 date-time">
-        <div id="clockdate"> 
+        <div id="clockdate">
           <div class="clockdate-wrapper mt-5">
             <div id="clock" style="font-size: 3.5vw;"></div>
             <div id="date" style="font-size: 1.2vw;"></div>
@@ -727,12 +727,14 @@
         </div>
       </div> -->
 
-      <div class="col-lg-5 mb-5" style="box-shadow:2px 2px 10px #424242;margin-left: 10px; border-radius: 40px; display: flex; justify-content: space-evenly;">
+      <div class="col-lg-5 mb-5"
+        style="box-shadow:2px 2px 10px #424242;margin-left: 10px; border-radius: 40px; display: flex; justify-content: space-evenly;">
         <div class="demo ml-5">
           <div class="clock ui-medium" data-timezone="Asia/Kolkata">
             <div class="needle">
               <span class="minutes"></span>
               <span class="hours"></span>
+              <!-- <span class="seconds"></span> -->
             </div>
 
             <ul class="time-number">
@@ -760,6 +762,7 @@
             <div class="needle">
               <span class="minutes"></span>
               <span class="hours"></span>
+              <!-- <span class="seconds"></span> -->
             </div>
 
             <ul class="time-number">
@@ -787,6 +790,7 @@
             <div class="needle">
               <span class="minutes"></span>
               <span class="hours"></span>
+              <!-- <span class="seconds"></span> -->
             </div>
 
             <ul class="time-number">
@@ -1059,6 +1063,7 @@
     startTime();
 
   </script>
+
   <script>
     // search all desired clocks
     function searchClocks() {
@@ -1082,13 +1087,12 @@
 
       const hours = nd.getHours().toString().padStart(2, '0');
       const minutes = nd.getMinutes().toString().padStart(2, '0');
-      // const seconds = nd.getSeconds().toString().padStart(2, '0');
+      const seconds = nd.getSeconds().toString().padStart(2, '0');
 
-      return ${ hours };${ minutes };
+      return `${hours}:${minutes}:${seconds}`
     }
 
     searchClocks();
-
   </script>
 
   <script>
@@ -1098,6 +1102,7 @@
       window.location.href = '../../../pages/error.html'; // Redirect to a mobile error page
     }
   </script>
+
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
