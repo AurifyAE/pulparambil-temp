@@ -301,7 +301,7 @@ async function showTable() {
 
             // Silver 1GM Table Value
             // Bid = parseFloat((parseFloat(silver) + parseFloat(silverBidSpread) || 0) * 1000).toFixed(3);
-            silverAskKG = parseFloat((parseFloat(silver) + 0.5 + parseFloat(silverAskSpread) || 0) * 1000).toFixed(3);
+            silverAskKG = parseFloat((parseFloat(silver) + 0.5 + parseFloat(silverAskSpread) || 0) * 1000).toFixed(0);
             document.getElementById('data4').textContent = silverAskKG;
             // console.log(ask);
         }, 1000);
