@@ -293,7 +293,7 @@ async function showTable() {
         const tableData = await readData();
         // console.log('Data read successfully:', tableData);
 
-        // console.log(tableData);
+        console.log(tableData);
 
         let silverAskKG
         setInterval(() => {
@@ -372,11 +372,11 @@ async function showTable() {
                 // }
 
 
-                if (tableData[1]) {
-                    let purity = tableData[1].data.purity;
-                    let metal = tableData[1].data.metal;
-                    let unit = tableData[1].data.unit;
-                    let weight = tableData[1].data.weight;
+                if (tableData[0]) {
+                    let purity = tableData[0].data.purity;
+                    let metal = tableData[0].data.metal;
+                    let unit = tableData[0].data.unit;
+                    let weight = tableData[0].data.weight;
 
                     if (weight === "GM") {
                         unitMultiplier = 1;
@@ -410,11 +410,11 @@ async function showTable() {
                     }
                 }
 
-                if (tableData[2]) {
-                    let purity = tableData[2].data.purity;
-                    let metal = tableData[2].data.metal;
-                    let unit = tableData[2].data.unit;
-                    let weight = tableData[2].data.weight;
+                if (tableData[1]) {
+                    let purity = tableData[1].data.purity;
+                    let metal = tableData[1].data.metal;
+                    let unit = tableData[1].data.unit;
+                    let weight = tableData[1].data.weight;
 
                     if (weight === "GM") {
                         unitMultiplier = 1;
@@ -448,11 +448,11 @@ async function showTable() {
                     }
                 }
 
-                if (tableData[3]) {
-                    let purity = tableData[3].data.purity;
-                    let metal = tableData[3].data.metal;
-                    let unit = tableData[3].data.unit;
-                    let weight = tableData[3].data.weight;
+                if (tableData[2]) {
+                    let purity = tableData[2].data.purity;
+                    let metal = tableData[2].data.metal;
+                    let unit = tableData[2].data.unit;
+                    let weight = tableData[2].data.weight;
 
                     if (weight === "GM") {
                         unitMultiplier = 1;
