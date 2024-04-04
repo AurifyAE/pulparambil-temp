@@ -83,13 +83,13 @@ async function fetchData() {
         var goldLowValue = parseFloat(resultGold.low_price).toFixed(2);
         var goldHighValue = parseFloat(resultGold.high_price).toFixed(2);
         var silverLowValue = parseFloat(resultSilver.low_price).toFixed(2);
-        var silverHighValue = parseFloat(resultSilver.high_price).toFixed(4);
+        var silverHighValue = parseFloat(resultSilver.high_price).toFixed(2);
 
 
         // goldBuy = (goldValueUSD + bidSpread).toFixed(2);
         // goldSell = (goldValueUSD + askSpread + parseFloat(0.5)).toFixed(2);
-        silverBuy = (silverValueUSD + silverBidSpread).toFixed(3);
-        silverSell = (silverValueUSD + silverAskSpread + parseFloat(0.05)).toFixed(3);
+        silverBuy = (silverValueUSD + silverBidSpread).toFixed(2);
+        silverSell = (silverValueUSD + silverAskSpread + parseFloat(0.05)).toFixed(2);
 
 
         var currentGoldBuy = goldBuy;
