@@ -23,7 +23,7 @@ setInterval(() => {
 showTable();
 
 
-let askSpread, bidSpread, goldValue, silverBidSpread, silverAskSpread, goldBuy, goldSell, silverBuy, silverSell, silverValue;
+let askSpread, bidSpread, goldValue, silverBidSpread, silverAskSpread, goldBuy, goldSell, silverBuy, silverSell, silverValue, goldHigh, goldLow;
 
 const socket = io('https://meta-api-server.onrender.com');
 
@@ -31,6 +31,8 @@ function fetchData2() {
     socket.on('goldValue', (goldValues) => {
         // console.log('Received gold value:', goldValue);
         const value = goldValues.bid;
+        goldHigh = goldValues.high;
+        goldLow = goldValues.low;
         goldBuy = (value + bidSpread).toFixed(2);
         goldSell = (value + askSpread + parseFloat(0.5)).toFixed(2);
 
@@ -80,8 +82,8 @@ async function fetchData() {
         var silverUSDResult = (silverValueUSD / 31.1035).toFixed(4)
         silverValue = parseFloat(silverUSDResult * 3.67).toFixed(4)
 
-        var goldLowValue = parseFloat(resultGold.low_price).toFixed(2);
-        var goldHighValue = parseFloat(resultGold.high_price).toFixed(2);
+        // var goldLowValue = parseFloat(resultGold.low_price).toFixed(2);
+        // var goldHighValue = parseFloat(resultGold.high_price).toFixed(2);
         var silverLowValue = parseFloat(resultSilver.low_price).toFixed(2);
         var silverHighValue = parseFloat(resultSilver.high_price).toFixed(2);
 
@@ -194,8 +196,8 @@ async function fetchData() {
         // document.getElementById("silverInputLow").innerHTML = silverBuy;
         // document.getElementById("silverInputHigh").innerHTML = silverSell;
 
-        document.getElementById("lowLabelGold").innerHTML = goldLowValue;
-        document.getElementById("highLabelGold").innerHTML = goldHighValue;
+        document.getElementById("lowLabelGold").innerHTML = goldLow;
+        document.getElementById("highLabelGold").innerHTML = goldHigh;
         document.getElementById("lowLabelSilver").innerHTML = silverLowValue;
         document.getElementById("highLabelSilver").innerHTML = silverHighValue;
 
