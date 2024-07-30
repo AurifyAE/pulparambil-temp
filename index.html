@@ -21,7 +21,7 @@
 
     body {
       margin: 0;
-      padding: 50px;
+      padding: 20px 40px;
       font-family: "arial", heletica, sans-serif;
       font-size: 24px;
       background: white url('./67158\ [Converted].png');
@@ -36,9 +36,9 @@
     }
 
     .row {
-      padding: 25px 25px 25px 25px;
       display: flex;
       justify-content: space-between;
+      padding: 20px 20px 20px 20px;
     }
 
     .card-logo {
@@ -92,7 +92,7 @@
 
     .card-table .row .column {
       text-align: center;
-      width: 400px;
+      width: 300px;
       margin: 0 0 0 0;
     }
 
@@ -268,8 +268,8 @@
 
     /* Clock */
     .clock {
-      width: 180px;
-      height: 180px;
+      width: 100px;
+      height: 100px;
       background-color: #fff;
       -webkit-box-shadow: 0 0 5px 0 #888;
       box-shadow: 0 0 5px 0 #888;
@@ -278,7 +278,7 @@
       perspective: 100px;
       display: inline-block;
       font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 18px;
+      font-size: 10px;
       font-weight: bold;
     }
 
@@ -287,7 +287,7 @@
       top: 50%;
       left: 60%;
       transform: translateY(-50%);
-      font-size: 18px;
+      font-size: 12px;
       opacity: 0.3;
       color: #000;
     }
@@ -577,7 +577,6 @@
       text-align: center;
       background-color: transparent;
       color: #ffffff;
-
       width: auto;
       height: 20vh;
       display: flex;
@@ -662,8 +661,8 @@
     }
 
     .clock.ui-medium {
-      width: 180px;
-      height: 180px;
+      width: 100px;
+      height: 100px;
     }
 
     .clock.ui-small {
@@ -673,11 +672,11 @@
 
     .demo {
       display: inline-block;
-      margin: 20px;
+      margin: 8px;
     }
 
     .demo h4 {
-      margin-top: 10px;
+      margin-top: 0px;
       color: antiquewhite;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       text-align: center;
@@ -687,6 +686,7 @@
       background-color: #dbbd75;
       border-radius: 20px;
       color: #260b0b;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -696,13 +696,13 @@
     <div class="col-lg-12 d-flex">
       <div class="col-lg-3">
         <img class="logo" src="./Pulparambil white logo.png" alt="pulparambil logo"
-          style="width: 120%;margin-top:20px;margin-left: 5%;">
+          style="width: 110%;margin-top:20px;margin-left: 0%;">
       </div>
-      <div class="col-lg-3 date-time">
+      <div class="col-lg-2 date-time">
         <div id="clockdate">
-          <div class="clockdate-wrapper mt-5">
-            <div id="clock" style="font-size: 3.5vw;"></div>
-            <div id="date" style="font-size: 1.2vw;"></div>
+          <div class="clockdate-wrapper mt-4">
+            <div id="clock" style="font-size: 3vw;"></div>
+            <div id="date" style="font-size: 1.1vw;"></div>
           </div>
         </div>
       </div>
@@ -727,7 +727,7 @@
       </div> -->
 
       <div class="col-lg-5 mb-5"
-        style="box-shadow:2px 2px 10px #424242;margin-left: 10px; border-radius: 40px; display: flex; justify-content: space-evenly;">
+        style="box-shadow:2px 2px 10px #424242;margin-left: 80px; border-radius: 40px; display: flex; justify-content: space-evenly;">
         <div class="demo">
           <div class="clock ui-medium" data-timezone="Asia/Kolkata">
             <div class="needle">
@@ -820,50 +820,50 @@
     </main>
 
     <div class=" col-lg-7"
-      style=" box-shadow:2px 2px 10px #424242;margin-left: 60px; border-radius: 40px;  padding: 0;">
+      style=" box-shadow:2px 2px 10px #424242;margin-left: 60px; border-radius: 40px; height: max-content;">
       <div class="col-lg-12">
         <div class="card-table">
           <div class="row">
             <div style="border-radius: 25px;" class="column">
               <div
-                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head1" style="font-size: 38px; font-weight: 600; color: black;">999 TTBAR</p>
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 5px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head1" style="font-size: 30px; font-weight: 600; color: black;">999 TTBAR</p>
               </div>
               <div
-                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
-                <p id="data3" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 5px;">
+                <p id="data3" style="font-size: 1.7vw; font-weight: 600; color: black;"></p>
               </div>
             </div>
             <div style="border-radius: 25px;" class="column">
               <div
-                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head2" style="font-size: 38px; font-weight: 600; color: black;">995 KGBAR</p>
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 5px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head2" style="font-size: 30px; font-weight: 600; color: black;">995 KGBAR</p>
               </div>
               <div
-                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
-                <p id="data1" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 5px;">
+                <p id="data1" style="font-size: 1.7vw; font-weight: 600; color: black;"></p>
               </div>
             </div>
           </div>
           <div class="row">
             <div style="border-radius: 25px;" class="column">
               <div
-                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head3" style="font-size: 38px; font-weight: 600; color: black;">9999 KGBAR</p>
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 5px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head3" style="font-size: 30px; font-weight: 600; color: black;">9999 KGBAR</p>
               </div>
               <div
-                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
-                <p id="data2" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 5px;">
+                <p id="data2" style="font-size: 1.7vw; font-weight: 600; color: black;"></p>
               </div>
             </div>
             <div style="border-radius: 25px;" class="column">
               <div
-                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 10px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <p id="head4" style="font-size: 38px; font-weight: 600; color: black;">9999 GM</p>
+                style="background-color: #dbbd75; border-top-left-radius: 25px; border-top-right-radius: 25px; padding: 5px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <p id="head4" style="font-size: 30px; font-weight: 600; color: black;">9999 GM</p>
               </div>
               <div
-                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 10px;">
-                <p id="data4" style="font-size: 2vw; font-weight: 600; color: black;"></p>
+                style="background-color: #ddd; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 5px;">
+                <p id="data4" style="font-size: 1.7vw; font-weight: 600; color: black;"></p>
                 </p>
               </div>
             </div>
@@ -874,8 +874,8 @@
 
 
 
-    <div class=" col-lg-4">
-      <div class=" col-lg-12 gold-silver gold d-block" style="margin-bottom: 20px;">
+    <div class="col-lg-4" style="margin-top: -50px; width: 100%;">
+      <div class="col-lg-12 gold-silver gold d-block " style="margin-bottom: 20px; width: 100%;">
 
         <div class="label"
           style="display: flex;justify-content: center;align-items: center; background-color:transparent;  color: #fff; margin:18px 0;">
@@ -964,16 +964,16 @@
     </div>
   </div>
 
-  <div class="col-lg-12 mb-5" style="display: flex; flex-direction: row; width: 97%; margin-left: 50px; height:90px;">
+  <div class="col-lg-12 mb-5" style="display: flex; flex-direction: row; width: 97%; margin-left: 50px; height: 50px; margin-top: -20px;">
     <div class="col-lg-3 news-label"
-      style="display: flex; flex-direction: column; border-radius:  30px 0 0 30px; background-color: #dbbd75; padding: 10px; justify-content: center; align-items: center; height: 90px;">
+      style="display: flex; flex-direction: column; border-radius:  30px 0 0 30px; background-color: #dbbd75; padding: 10px; justify-content: center; align-items: center; height: 50px;">
       <h3 style="font-size: 1.5vw; font-weight: 600; color: black; margin-top: 15px;">PULPARAMBIL</h3>
       <p style="font-size: 1.1vw; font-weight: 600; color: black; margin-top: -15px;">Latest News</p>
     </div>
     <div class="col-lg-9 news"
-      style="background-color: rgba(255, 255, 255, 0.9); border-radius:  0 30px 30px 0; height: 90px;">
+      style="background-color: rgba(255, 255, 255, 0.9); border-radius:  0 30px 30px 0; height: 50px;">
       <marquee behavior="scrolling" direction="left" id="displayNews"
-        style="font-size: 1.8vw; font-weight: 600; color: black; padding: 15px; height: max-content;">-</marquee>
+        style="font-size: 1.2vw; font-weight: 600; color: black; padding: 15px; height: max-content;">-</marquee>
     </div>
   </div>
 
