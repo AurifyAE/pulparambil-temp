@@ -12,7 +12,22 @@ document.head.appendChild(script);
 // global.document = dom.window.document;
 
 
+const socket = io('https://capital-server-9ebj.onrender.com/', {
+    query: { secret: 'aurify@123' }, // Pass secret key as query parameter
+});
+
 const firestore = getFirestore(app)
+
+socket.on("connect", () => {
+    console.log("Connected to WebSocket server");
+    requestMarketData(["GOLD", "SILVER"]);
+});
+
+// Request market data based on symbols
+function requestMarketData(symbols) {
+    socket.emit("request-data", symbols);
+}
+
 
 setInterval(fetchData, 500);
 
@@ -23,29 +38,55 @@ setInterval(() => {
 showTable();
 
 
-let askSpread, bidSpread, goldBiddingPrice, goldAskingPrice, silverBidSpread, silverAskSpread, goldBuy, goldSell, silverBuy, silverSell, silverValue, goldHigh, goldLow;
+let askSpread, bidSpread, silverBidSpread, silverAskSpread, goldBuy, goldAskingPrice, goldBiddingPrice,
+    goldSell, silverBuy, silverSell, silverValue, goldHigh, goldLow, silverLow, silverHigh, silverAskingPrice, silverBiddingPrice;
 
-const socket = io('https://meta-api-server.onrender.com');
+let goldData = {}
+let silverData = {}
 
-function fetchData2() {
-    let value;
-    socket.on('goldValue', (goldValues) => {
-        // console.log('Received gold value:', goldValue);
-        value = goldValues.bid;
-        goldHigh = goldValues.high;
-        goldLow = goldValues.low;
+async function fetchData2() {
+    socket.on('market-data', (data) => {
+        // console.log('Received gold value:', data);
+
+        if (data && data.symbol) {
+            if (data.symbol === "Gold") {
+                goldData = data;
+                // updateGoldUI();
+            } else if (data.symbol === "Silver") {
+                silverData = data;
+            }
+        } else {
+            console.warn("Received malformed market data:", data);
+        }
+
+
+        const value = goldData.bid;
+        goldHigh = goldData.high;
+        goldLow = goldData.low;
         goldBuy = (value + bidSpread).toFixed(2);
         goldSell = (value + bidSpread + askSpread + parseFloat(0.5)).toFixed(2);
 
-        // You can do something with the received gold value here, like updating UI
+        const value2 = silverData.bid;
+        silverHigh = silverData.high;
+        silverLow = silverData.low;
+        silverBuy = (value2 + silverBidSpread).toFixed(2);
+        silverSell = (value2 + silverBidSpread + silverAskSpread + parseFloat(0.5)).toFixed(2);
+
+
+
     });
 
-    
-    var GoldBuyUSD = (goldBuy / 31.103).toFixed(4);
-    goldBiddingPrice = (GoldBuyUSD * 3.674).toFixed(4);
-    
-    var GoldSellUSD = (goldSell / 31.103).toFixed(4);
-    goldAskingPrice = (GoldSellUSD * 3.674).toFixed(4);
+    var goldBuyUSD = (goldBuy / 31.103).toFixed(4);
+    goldBiddingPrice = (goldBuyUSD * 3.674).toFixed(4);
+
+    var goldSellUSD = (goldSell / 31.103).toFixed(4);
+    goldAskingPrice = (goldSellUSD * 3.674).toFixed(4);
+
+    var silverBuyUSD = (silverBuy / 31.103).toFixed(4);
+    silverBiddingPrice = (silverBuyUSD * 3.674).toFixed(4);
+
+    var silverSellUSD = (silverSell / 31.103).toFixed(4);
+    silverAskingPrice = (silverSellUSD * 3.674).toFixed(4);
 }
 
 
@@ -54,52 +95,7 @@ const API_KEY = 'goldapi-fbqpmirloto20zi-io'
 
 // Function to Fetch Gold API Data
 async function fetchData() {
-    var myHeaders = new Headers();
-    myHeaders.append("x-access-token", API_KEY);
-    myHeaders.append("Content-Type", "application/json");
-
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
-
     try {
-        const responseGold = await fetch("https://www.goldapi.io/api/XAU/USD", requestOptions);
-        const responseSilver = await fetch("https://www.goldapi.io/api/XAG/USD", requestOptions);
-
-        if (!responseGold.ok && !responseSilver.ok) {
-            throw new Error('One or more network responses were not OK');
-        }
-
-        const resultGold = await responseGold.json();
-        const resultSilver = await responseSilver.json();
-
-        // Adjust based on the actual API response structure
-        var goldValueUSD = parseFloat(resultGold.price);
-        var silverValueUSD = parseFloat(resultSilver.price)
-
-        document.getElementById('goldRate').textContent = '$' + goldValueUSD.toFixed(2);
-        document.getElementById('silverRate').textContent = '$' + silverValueUSD.toFixed(3);
-
-        // var GoldUSDResult = (goldValueUSD / 31.1035).toFixed(4);
-        // goldValue = (GoldUSDResult * 3.67).toFixed(4);
-
-        var silverUSDResult = (silverValueUSD / 31.1035).toFixed(4)
-        silverValue = parseFloat(silverUSDResult * 3.67).toFixed(4)
-
-        // var goldLowValue = parseFloat(resultGold.low_price).toFixed(2);
-        // var goldHighValue = parseFloat(resultGold.high_price).toFixed(2);
-        var silverLowValue = parseFloat(resultSilver.low_price).toFixed(2);
-        var silverHighValue = parseFloat(resultSilver.high_price).toFixed(2);
-
-
-        // goldBuy = (goldValueUSD + bidSpread).toFixed(2);
-        // goldSell = (goldValueUSD + askSpread + parseFloat(0.5)).toFixed(2);
-        silverBuy = (silverValueUSD + silverBidSpread).toFixed(2);
-        silverSell = (silverValueUSD + silverAskSpread + parseFloat(0.05)).toFixed(2);
-
-
         var currentGoldBuy = goldBuy;
         var currentGoldSell = goldSell;
         var currentSilverBuy = silverBuy;
@@ -196,16 +192,10 @@ async function fetchData() {
 
         updatePrice();
 
-
-        // document.getElementById("goldInputLow").innerHTML = goldBuy;
-        // document.getElementById("goldInputHigh").innerHTML = goldSell;
-        // document.getElementById("silverInputLow").innerHTML = silverBuy;
-        // document.getElementById("silverInputHigh").innerHTML = silverSell;
-
         document.getElementById("lowLabelGold").innerHTML = goldLow;
         document.getElementById("highLabelGold").innerHTML = goldHigh;
-        document.getElementById("lowLabelSilver").innerHTML = silverLowValue;
-        document.getElementById("highLabelSilver").innerHTML = silverHighValue;
+        document.getElementById("lowLabelSilver").innerHTML = silverLow;
+        document.getElementById("highLabelSilver").innerHTML = silverHigh;
 
         var element;
 
